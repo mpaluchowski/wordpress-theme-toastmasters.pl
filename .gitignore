@@ -1,2 +1,8 @@
+### SublimeText ###
+*.sublime-workspace
+*.sublime-project
+
+### Sass ###
 .sass-cache/
+*.css
 *.css.map
