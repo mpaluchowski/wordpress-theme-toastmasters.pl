@@ -114,3 +114,55 @@ $responsive-large: "only screen and (min-width: 1024px)";
 		flex-direction: row;
 	}
 }
+
+.page-footer-container {
+	background: lighten($tm-blue, 20%);
+}
+
+.page-footer {
+	background: $tm-blue;
+}
+
+	.page-footer__copyright {
+		color: #FFF;
+		font-size: .8rem;
+		line-height: 140%;
+		margin: 0;
+		padding: .8rem 1.1rem;
+
+		a {
+			border-bottom: 1px solid lighten($tm-blue, 60%);
+			color: lighten($tm-blue, 40%);
+			text-decoration: none;
+
+			&:hover {
+				color: lighten($tm-blue, 60%);
+			}
+		}
+	}
+
+	.page-footer__social-links {
+		padding: 1em 1.1rem;
+	}
+
+.social-links {
+	background: $tm-grey;
+}
+
+	.social-links__link {
+		display: inline-block;
+		font-size: 2rem;
+		color: #FFF;
+
+		&:hover {
+			color: lighten($tm-blue, 60%);
+		}
+	}
+
+	.social-links__text {
+		clip: rect(1px, 1px, 1px, 1px);
+		height: 1px;
+		overflow: hidden;
+		position: absolute !important;
+		width: 1px;
+	}
