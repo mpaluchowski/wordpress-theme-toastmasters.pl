@@ -6,6 +6,8 @@ function toastmasterspl_setup() {
 	register_nav_menus( array(
 		'organization-breadcrumb'  => __( 'Organization Breadcrumb Menu', 'toastmasterspl' ),
 	) );
+
+	add_editor_style( array( 'css/editor-style.css' ) );
 }
 add_action( 'after_setup_theme', 'toastmasterspl_setup' );
 
