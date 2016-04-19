@@ -13,3 +13,12 @@ Text Domain: toastmasterspl
 This theme, is licensed under the Apache License.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+@import "css/normalize";
+
+.page-body {
+	background: #EEE;
+	display: flex;
+	flex-direction: column;
+	font-family: Roboto, Helvetica, Arial, sans-serif;
+	min-height: 100vh;
+}
