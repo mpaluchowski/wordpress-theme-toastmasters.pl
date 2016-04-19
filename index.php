@@ -31,6 +31,9 @@
 </header>
 </div>
 
+<main class="page-element page-content">
+</main>
+
 </body>
 
 </html>

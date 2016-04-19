@@ -100,3 +100,17 @@ $responsive-large: "only screen and (min-width: 1024px)";
 			border-bottom-color: #FFF;
 		}
 	}
+
+.page-content {
+	background: #FFF;
+	display: flex;
+	flex: 1;
+
+	@media #{$responsive-small} {
+		flex-direction: column;
+	}
+
+	@media #{$responsive-large} {
+		flex-direction: row;
+	}
+}
