@@ -60,19 +60,7 @@ $responsive-large: "only screen and (min-width: 1024px)";
 }
 
 	.page-header__organization-breadcrumb {
-		color: #FFF;
 		float: left;
-		font-size: 1.4rem;
-	}
-
-	.page-header__organization-link {
-		border-bottom: 1px solid lighten($tm-crimson, 40%);
-		color: #FFF;
-		text-decoration: none;
-
-		&:hover {
-			border-bottom-color: #FFF;
-		}
 	}
 
 	.page-header__site-name {
@@ -89,5 +77,26 @@ $responsive-large: "only screen and (min-width: 1024px)";
 
 		@media #{$responsive-small} {
 			display: none;
+		}
+	}
+
+.organization-breadcrumb {
+	color: #FFF;
+	font-size: 1.4rem;
+}
+
+	.organization-breadcrumb__item {
+		& + .organization-breadcrumb__item:before {
+			content: ", ";
+		}
+	}
+
+	.organization-breadcrumb__link {
+		border-bottom: 1px solid lighten($tm-crimson, 40%);
+		color: #FFF;
+		text-decoration: none;
+
+		&:hover {
+			border-bottom-color: #FFF;
 		}
 	}

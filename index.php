@@ -12,10 +12,18 @@
 
 <div class="page-header-container">
 <header class="page-element page-header">
-	<span class="page-header__organization-breadcrumb">
-		<a class="page-header__organization-link" href="http://www.toastmasters.org/">Toastmasters</a>,
-		<a class="page-header__organization-link" href="http://toastmastersd95.org/">District 95</a>
-	</span>
+	<?php
+		wp_nav_menu( array(
+			'theme_location' => 'organization-breadcrumb',
+			'menu_class' => 'page-header__organization-breadcrumb organization-breadcrumb',
+			'container' => false,
+			'depth' => 1,
+			'walker' => new Organization_Breadcrumb_Walker(),
+			'items_wrap' => '<span class="%2$s">%3$s</span>',
+			'toastmasterspl_item_class' => 'organization-breadcrumb__item',
+			'toastmasterspl_link_class' => 'organization-breadcrumb__link',
+		 ) );
+	?>
 
 	<h1 class="page-header__site-name"><?php bloginfo( 'name' ) ?></h1>
 
