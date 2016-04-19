@@ -18,7 +18,7 @@ class Organization_Breadcrumb_Walker extends Walker_Nav_Menu {
             and $class_names_item .= ' ' . esc_attr( $args->toastmasterspl_item_class );
 
         ! empty ( $class_names_item )
-            and $class_names_item = ' class="'. esc_attr( $class_names_item ) . '"';
+            and $class_names_item = 'class="'. esc_attr( $class_names_item ) . '"';
 
         $class_names_link = '';
 
@@ -26,7 +26,7 @@ class Organization_Breadcrumb_Walker extends Walker_Nav_Menu {
             and $class_names_link .= ' ' . esc_attr( $args->toastmasterspl_link_class );
 
         ! empty ( $class_names_link )
-            and $class_names_link = ' class="'. esc_attr( $class_names_link ) . '"';
+            and $class_names_link = 'class="'. esc_attr( $class_names_link ) . '"';
 
         $attributes  = '';
 
@@ -41,12 +41,28 @@ class Organization_Breadcrumb_Walker extends Walker_Nav_Menu {
 
         $title = apply_filters( 'the_title', $item->title, $item->ID );
 
-        $output .= "<span $class_names_item><a $class_names_link $attributes>"
+        $item_output = "<span $class_names_item><a $class_names_link $attributes>"
             . $title;
+
+        $output .= apply_filters(
+            'walker_nav_menu_start_el',
+            $item_output,
+            $item,
+            $depth,
+            $args
+        );
     }
 
     function end_el( &$output, $object, $depth = 0, $args = array() ) {
-        $output .= '</a></span>';
+        $item_output = '</a></span>';
+
+        $output .= apply_filters(
+            'walker_nav_menu_end_el',
+            $item_output,
+            $item,
+            $depth,
+            $args
+        );
     }
 
 }
