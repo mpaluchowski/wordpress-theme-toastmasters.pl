@@ -101,6 +101,78 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	}
 }
 
+	.page-content__main {
+		@media #{$responsive-medium} {
+			flex: 2;
+		}
+
+		@media #{$responsive-large} {
+			flex: 2.5;
+		}
+	}
+
+	.page-content__article-text {
+		margin: 1em 1.1rem;
+		overflow: auto;
+
+		@media #{$responsive-large} {
+			padding-left: 10rem;
+		}
+	}
+
+	.page-content__aside {
+		margin: 1em 1.1rem;
+
+		@media #{$responsive-medium} {
+			flex: 1;
+		}
+
+		@media #{$responsive-large} {
+			flex: 1;
+		}
+	}
+
+		.page-content__widget {
+			background: $tm-grey;
+			box-sizing: border-box;
+			padding: 1em;
+
+			& + .page-content__widget {
+				margin-top: 1em;
+			}
+		}
+
+.article-header {
+	position: relative;
+}
+
+	.article-header__title {
+		background: $tm-red;
+		color: #FFF;
+		margin: 0;
+		padding: .4em 2.2rem .4em 1.1rem;
+
+		@media #{$responsive-medium-large} {
+			bottom: 0;
+			position: absolute;
+		}
+
+		@media #{$responsive-large} {
+			left: 0;
+			margin-left: 10rem;
+			right: 0;
+		}
+	}
+
+	.article-header__image {
+		display: block;
+		width: 100%;
+	}
+
+.article-text {
+	@import "css/article-text";
+}
+
 .page-footer-container {
 	background: lighten($tm-blue, 20%);
 }
