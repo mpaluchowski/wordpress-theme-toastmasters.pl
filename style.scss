@@ -220,3 +220,27 @@ $responsive-large: "only screen and (min-width: 1024px)";
 			position: absolute !important;
 			width: 1px;
 		}
+
+.page-navigation-link-container {
+	background: lighten($tm-red, 20%);
+
+	@media #{$responsive-small-medium} {
+		order: -1;
+	}
+
+	@media #{$responsive-large} {
+		display: none;
+	}
+}
+
+.page-navigation-link {
+	background: $tm-red;
+}
+
+	.page-navigation-link__link {
+		color: #FFF;
+		font-size: 1.8rem;
+		display: block;
+		padding: .2em 1.1rem;
+		text-decoration: none;
+	}

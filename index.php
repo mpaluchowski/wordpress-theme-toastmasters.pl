@@ -58,6 +58,12 @@
 </nav>
 </div>
 
+<div class="page-navigation-link-container">
+<div class="page-element page-navigation-link">
+	<a href="#page-navigation" class="page-navigation-link__link"><i class="fa fa-bars"></i></a>
+</div>
+</div>
+
 <?php wp_footer() ?>
 
 </body>
