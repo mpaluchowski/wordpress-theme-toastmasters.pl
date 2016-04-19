@@ -34,6 +34,8 @@
 <main class="page-element page-content">
 </main>
 
+<?php wp_footer() ?>
+
 </body>
 
 </html>
