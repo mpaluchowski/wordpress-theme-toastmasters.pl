@@ -2,6 +2,10 @@
 
 A custom WordPress theme for the [Toastmasters in Poland website](http://www.toastmasters.pl/).
 
+## Screenshot
+
+![Toastmasters.pl Theme Screenshot](screenshot.png?raw=true)
+
 ## License
 
 Copyright 2016 Michał Paluchowski
