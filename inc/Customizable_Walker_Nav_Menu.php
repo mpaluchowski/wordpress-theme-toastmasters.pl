@@ -28,19 +28,19 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
     }
 
     private function build_wrap_start( $args ) {
-        return !empty( $args->toastmasterspl_before_item )
-            ? $args->toastmasterspl_before_item
+        return !empty( $args->customizable_before_item )
+            ? $args->customizable_before_item
             : '';
     }
 
     private function build_icon_start( $item, $args ) {
         $item_icon_start = $this->item_has_icon( $item, $args )
-            ? '<i class="fa fa-' . esc_attr( $args->toastmasterspl_link_icons[ $item->menu_order ] ) . '"></i>'
+            ? '<i class="fa fa-' . esc_attr( $args->customizable_link_icons[ $item->menu_order ] ) . '"></i>'
             : '';
 
         $item_text_class = '';
-        ! empty( $args->toastmasterspl_text_class )
-            and $item_text_class .= ' class="' . esc_attr( $args->toastmasterspl_text_class ) . '"';
+        ! empty( $args->customizable_text_class )
+            and $item_text_class .= ' class="' . esc_attr( $args->customizable_text_class ) . '"';
 
         $this->item_has_icon( $item, $args )
             and $item_icon_start .= "<span$item_text_class>";
@@ -49,21 +49,21 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
     }
 
     private function item_has_icon( $item, $args ) {
-        return !empty( $args->toastmasterspl_link_icons )
-            && array_key_exists( $item->menu_order, $args->toastmasterspl_link_icons );
+        return !empty( $args->customizable_link_icons )
+            && array_key_exists( $item->menu_order, $args->customizable_link_icons );
     }
 
     private function build_link_class( $item, $args ) {
         $class_names_link = '';
 
-        ! empty ( $args->toastmasterspl_link_class )
-            and $class_names_link .= ' ' . esc_attr( $args->toastmasterspl_link_class );
-        ! empty ( $args->toastmasterspl_link_class_current )
+        ! empty ( $args->customizable_link_class )
+            and $class_names_link .= ' ' . esc_attr( $args->customizable_link_class );
+        ! empty ( $args->customizable_link_class_current )
             and $item->current
-            and $class_names_link .= ' ' . esc_attr( $args->toastmasterspl_link_class_current );
-        ! empty ( $args->toastmasterspl_icon_class )
+            and $class_names_link .= ' ' . esc_attr( $args->customizable_link_class_current );
+        ! empty ( $args->customizable_icon_class )
             and $this->item_has_icon( $item, $args )
-            and $class_names_link .= ' ' . esc_attr( $args->toastmasterspl_icon_class );
+            and $class_names_link .= ' ' . esc_attr( $args->customizable_icon_class );
 
         return empty( $class_names_link )
             ? ''
@@ -110,8 +110,8 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
     }
 
     private function build_wrap_end( $args ) {
-        return !empty( $args->toastmasterspl_after_item )
-            ? $args->toastmasterspl_after_item
+        return !empty( $args->customizable_after_item )
+            ? $args->customizable_after_item
             : '';
     }
 
