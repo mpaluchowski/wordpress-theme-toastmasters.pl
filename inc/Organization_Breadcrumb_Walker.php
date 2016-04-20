@@ -7,10 +7,7 @@ class Organization_Breadcrumb_Walker extends Walker_Nav_Menu {
             ? $args->toastmasterspl_item_wrap[0]
             : '';
 
-        $item_icon_start = (
-                !empty( $args->toastmasterspl_link_icons )
-                && array_key_exists( $item->menu_order, $args->toastmasterspl_link_icons )
-            )
+        $item_icon_start = $this->item_has_icon( $item, $args )
             ? '<i class="fa fa-' . esc_attr( $args->toastmasterspl_link_icons[ $item->menu_order ] ) . '"></i>'
             : '';
 
@@ -18,7 +15,7 @@ class Organization_Breadcrumb_Walker extends Walker_Nav_Menu {
         ! empty( $args->toastmasterspl_text_class )
             and $item_text_class .= ' class="' . esc_attr( $args->toastmasterspl_text_class ) . '"';
 
-        ! empty( $item_icon_start )
+        $this->item_has_icon( $item, $args )
             and $item_icon_start .= "<span$item_text_class>";
 
         $class_names_link = '';
@@ -29,7 +26,7 @@ class Organization_Breadcrumb_Walker extends Walker_Nav_Menu {
             and $item->current
             and $class_names_link .= ' ' . esc_attr( $args->toastmasterspl_link_class_current );
         ! empty ( $args->toastmasterspl_icon_class )
-            and ! empty ( $item_icon_start )
+            and $this->item_has_icon( $item, $args )
             and $class_names_link .= ' ' . esc_attr( $args->toastmasterspl_icon_class );
 
         ! empty ( $class_names_link )
@@ -63,10 +60,7 @@ class Organization_Breadcrumb_Walker extends Walker_Nav_Menu {
     }
 
     function end_el( &$output, $item, $depth = 0, $args = array() ) {
-        $item_icon_end = (
-                !empty( $args->toastmasterspl_link_icons )
-                && array_key_exists( $item->menu_order, $args->toastmasterspl_link_icons )
-            )
+        $item_icon_end = $this->item_has_icon( $item, $args )
             ? '</span>'
             : '';
 
@@ -85,6 +79,11 @@ class Organization_Breadcrumb_Walker extends Walker_Nav_Menu {
             $depth,
             $args
         );
+    }
+
+    private function item_has_icon( $item, $args ) {
+        return !empty( $args->toastmasterspl_link_icons )
+            && array_key_exists( $item->menu_order, $args->toastmasterspl_link_icons );
     }
 
 }
