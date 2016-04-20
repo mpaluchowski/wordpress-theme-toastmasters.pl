@@ -36,7 +36,7 @@
         <?php
             while ( have_posts() ) : the_post();
         ?>
-		<header class="page-content__article-header article-header">
+		<header class="page-content__article-header article-header<?php if ( has_post_thumbnail() ): ?> article-header--featured-image<?php endif ?>">
             <?php
                 if ( has_post_thumbnail() ) {
                     the_post_thumbnail( 'post-thumbnail', [ 'class' => 'article-header__image' ] );
