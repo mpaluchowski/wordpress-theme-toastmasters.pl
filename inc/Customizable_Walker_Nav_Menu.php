@@ -3,9 +3,7 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
 
     function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 
-        $item_wrap_start = !empty( $args->toastmasterspl_item_wrap )
-            ? $args->toastmasterspl_item_wrap[0]
-            : '';
+        $item_wrap_start = $this->build_wrap_start( $args );
 
         $item_icon_start = $this->build_icon_start( $item, $args );
 
@@ -27,6 +25,12 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
             $depth,
             $args
         );
+    }
+
+    private function build_wrap_start( $args ) {
+        return !empty( $args->toastmasterspl_item_wrap )
+            ? $args->toastmasterspl_item_wrap[0]
+            : '';
     }
 
     private function build_link_class( $item, $args ) {
