@@ -32,16 +32,7 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
         ! empty ( $class_names_link )
             and $class_names_link = 'class="'. esc_attr( $class_names_link ) . '"';
 
-        $attributes  = '';
-
-        ! empty( $item->attr_title )
-            and $attributes .= ' title="' . esc_attr( $item->attr_title ) .'"';
-        ! empty( $item->target )
-            and $attributes .= ' target="' . esc_attr( $item->target ) .'"';
-        ! empty( $item->xfn )
-            and $attributes .= ' rel="' . esc_attr( $item->xfn ) .'"';
-        ! empty( $item->url )
-            and $attributes .= ' href="' . esc_attr( $item->url ) .'"';
+        $attributes  = $this->build_link_attributes( $item );
 
         $title = apply_filters( 'the_title', $item->title, $item->ID );
 
@@ -84,6 +75,21 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
     private function item_has_icon( $item, $args ) {
         return !empty( $args->toastmasterspl_link_icons )
             && array_key_exists( $item->menu_order, $args->toastmasterspl_link_icons );
+    }
+
+    private function build_link_attributes( $item ) {
+        $attributes  = '';
+
+        ! empty( $item->attr_title )
+            and $attributes .= ' title="' . esc_attr( $item->attr_title ) .'"';
+        ! empty( $item->target )
+            and $attributes .= ' target="' . esc_attr( $item->target ) .'"';
+        ! empty( $item->xfn )
+            and $attributes .= ' rel="' . esc_attr( $item->xfn ) .'"';
+        ! empty( $item->url )
+            and $attributes .= ' href="' . esc_attr( $item->url ) .'"';
+
+        return $attributes;
     }
 
 }
