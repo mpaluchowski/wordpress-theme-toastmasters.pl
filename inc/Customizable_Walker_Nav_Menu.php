@@ -48,6 +48,11 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
         return $item_icon_start;
     }
 
+    private function item_has_icon( $item, $args ) {
+        return !empty( $args->toastmasterspl_link_icons )
+            && array_key_exists( $item->menu_order, $args->toastmasterspl_link_icons );
+    }
+
     private function build_link_class( $item, $args ) {
         $class_names_link = '';
 
@@ -63,6 +68,21 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
         return empty( $class_names_link )
             ? ''
             : 'class="'. esc_attr( $class_names_link ) . '"';
+    }
+
+    private function build_link_attributes( $item ) {
+        $attributes  = '';
+
+        ! empty( $item->attr_title )
+            and $attributes .= ' title="' . esc_attr( $item->attr_title ) .'"';
+        ! empty( $item->target )
+            and $attributes .= ' target="' . esc_attr( $item->target ) .'"';
+        ! empty( $item->xfn )
+            and $attributes .= ' rel="' . esc_attr( $item->xfn ) .'"';
+        ! empty( $item->url )
+            and $attributes .= ' href="' . esc_attr( $item->url ) .'"';
+
+        return $attributes;
     }
 
     function end_el( &$output, $item, $depth = 0, $args = array() ) {
@@ -93,26 +113,6 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
         return !empty( $args->toastmasterspl_after_item )
             ? $args->toastmasterspl_after_item
             : '';
-    }
-
-    private function item_has_icon( $item, $args ) {
-        return !empty( $args->toastmasterspl_link_icons )
-            && array_key_exists( $item->menu_order, $args->toastmasterspl_link_icons );
-    }
-
-    private function build_link_attributes( $item ) {
-        $attributes  = '';
-
-        ! empty( $item->attr_title )
-            and $attributes .= ' title="' . esc_attr( $item->attr_title ) .'"';
-        ! empty( $item->target )
-            and $attributes .= ' target="' . esc_attr( $item->target ) .'"';
-        ! empty( $item->xfn )
-            and $attributes .= ' rel="' . esc_attr( $item->xfn ) .'"';
-        ! empty( $item->url )
-            and $attributes .= ' href="' . esc_attr( $item->url ) .'"';
-
-        return $attributes;
     }
 
 }
