@@ -152,11 +152,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 		margin: 0;
 		padding: .4em 2.2rem .4em 1.1rem;
 
-		@media #{$responsive-medium-large} {
-			bottom: 0;
-			position: absolute;
-		}
-
 		@media #{$responsive-large} {
 			left: 0;
 			margin-left: 10rem;
@@ -164,8 +159,18 @@ Use it to make something cool, have fun, and share what you've learned with othe
 		}
 	}
 
+		.article-header--featured-image {
+			.article-header__title {
+				@media #{$responsive-medium-large} {
+					bottom: 0;
+					position: absolute;
+				}
+			}
+		}
+
 	.article-header__image {
 		display: block;
+		height: auto;
 		width: 100%;
 	}
 

@@ -33,21 +33,21 @@
 
 <main class="page-element page-content">
 	<div class="page-content__main">
-		<header class="page-content__article-header article-header">
-			<img class="article-header__image" src="featured-image.jpg" alt="Featured Image">
-			<h1 class="article-header__title">Welcome to Toastmasters!</h1>
+        <?php
+            while ( have_posts() ) : the_post();
+        ?>
+		<header class="page-content__article-header article-header<?php if ( has_post_thumbnail() ): ?> article-header--featured-image<?php endif ?>">
+            <?php
+                if ( has_post_thumbnail() ) {
+                    the_post_thumbnail( 'post-thumbnail', [ 'class' => 'article-header__image' ] );
+                }
+            ?>
+            <?php the_title( '<h1 class="article-header__title">', '</h1>' ) ?>
 		</header>
 		<article class="page-content__article-text article-text">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id lectus dolor. Fusce ut sagittis lectus. <em>Proin sagittis lectus</em> sed neque hendrerit, vitae commodo magna fermentum. Integer laoreet purus vestibulum risus iaculis, id tincidunt erat ultricies. <a href="">Nulla eu facilisis</a> purus. Sed dapibus iaculis metus imperdiet tempus. Integer ut tellus mauris.</p>
-			<p>Suspendisse quis lorem est. Nam eget sagittis nulla. Etiam et lorem at lorem mattis interdum ac at risus. Nam suscipit fermentum congue. Sed eu dignissim lacus. <strong>Quisque hendrerit</strong>, sapien vel molestie commodo, magna velit placerat ligula, eu ullamcorper urna odio et neque. In molestie, purus vitae dignissim vestibulum, libero nisl malesuada erat, at venenatis lectus magna nec erat. Fusce vestibulum erat semper, maximus massa non, dignissim est.</p>
-			<h2>Some other header</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id lectus dolor. <mark>Fusce ut sagittis lectus</mark>. Proin sagittis lectus sed neque hendrerit, vitae commodo magna fermentum. Integer laoreet purus vestibulum risus iaculis, id tincidunt erat ultricies. <a href="">Nulla eu facilisis</a> purus. Sed dapibus iaculis metus imperdiet tempus. Integer ut tellus mauris.</p>
-			<ul>
-				<li>Lorem ipsum,</li>
-				<li>dolor sit amet,</li>
-				<li>consectetur adipiscing elit.</li>
-			</ul>
+            <?php the_content() ?>
 		</article>
+        <?php endwhile; // have_posts() ?>
 	</div>
 
 	<div class="page-content__aside">
