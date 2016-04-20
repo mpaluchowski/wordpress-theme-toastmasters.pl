@@ -9,6 +9,27 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
 
         $item_icon_start = $this->build_icon_start( $item, $args );
 
+        $class_link = $this->build_link_class( $item, $args );
+
+        $attributes  = $this->build_link_attributes( $item );
+
+        $title = apply_filters( 'the_title', $item->title, $item->ID );
+
+        $item_output = $item_wrap_start
+            . "<a $class_link $attributes>"
+            . $item_icon_start
+            . $title;
+
+        $output .= apply_filters(
+            'walker_nav_menu_start_el',
+            $item_output,
+            $item,
+            $depth,
+            $args
+        );
+    }
+
+    private function build_link_class( $item, $args ) {
         $class_names_link = '';
 
         ! empty ( $args->toastmasterspl_link_class )
@@ -20,25 +41,9 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
             and $this->item_has_icon( $item, $args )
             and $class_names_link .= ' ' . esc_attr( $args->toastmasterspl_icon_class );
 
-        ! empty ( $class_names_link )
-            and $class_names_link = 'class="'. esc_attr( $class_names_link ) . '"';
-
-        $attributes  = $this->build_link_attributes( $item );
-
-        $title = apply_filters( 'the_title', $item->title, $item->ID );
-
-        $item_output = $item_wrap_start
-            . "<a $class_names_link $attributes>"
-            . $item_icon_start
-            . $title;
-
-        $output .= apply_filters(
-            'walker_nav_menu_start_el',
-            $item_output,
-            $item,
-            $depth,
-            $args
-        );
+        return empty( $class_names_link )
+            ? ''
+            : 'class="'. esc_attr( $class_names_link ) . '"';
     }
 
     function end_el( &$output, $item, $depth = 0, $args = array() ) {
