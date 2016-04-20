@@ -34,4 +34,4 @@ function toastmasterspl_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'toastmasterspl_scripts' );
 
-require get_template_directory() . '/inc/Organization_Breadcrumb_Walker.php';
+require get_template_directory() . '/inc/Customizable_Walker_Nav_Menu.php';

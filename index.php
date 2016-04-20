@@ -18,7 +18,7 @@
 			'menu_class' => 'page-header__organization-breadcrumb organization-breadcrumb',
 			'container' => false,
 			'depth' => 1,
-			'walker' => new Organization_Breadcrumb_Walker(),
+			'walker' => new Customizable_Walker_Nav_Menu(),
 			'items_wrap' => '<span class="%2$s">%3$s</span>',
 			'toastmasterspl_item_wrap' => ['<span class="organization-breadcrumb__item">', '</span>'],
 			'toastmasterspl_link_class' => 'organization-breadcrumb__link',
@@ -76,7 +76,7 @@
 			'container' => false,
 			'depth' => 1,
 			'items_wrap' => '%3$s',
-			'walker' => new Organization_Breadcrumb_Walker(),
+			'walker' => new Customizable_Walker_Nav_Menu(),
 			'toastmasterspl_link_class' => 'page-navigation__link',
 			'toastmasterspl_link_class_current' => 'page-navigation__link--current',
 			'toastmasterspl_link_icons' => [
