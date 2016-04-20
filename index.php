@@ -50,10 +50,11 @@
         <?php endwhile; // have_posts() ?>
     </div>
 
+    <?php if ( is_active_sidebar( 'sidebar-page-content' )  ) : ?>
     <div class="page-content__aside">
-        <aside class="page-content__widget">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id lectus dolor. Fusce ut sagittis lectus. Proin sagittis lectus sed neque hendrerit, vitae commodo magna fermentum.</aside>
-        <aside class="page-content__widget">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id lectus dolor. Fusce ut sagittis lectus. Proin sagittis lectus sed neque hendrerit, vitae commodo magna fermentum.</aside>
+        <?php dynamic_sidebar( 'sidebar-page-content' ); ?>
     </div>
+    <?php endif; ?>
 </main>
 
 <div class="page-footer-container">
