@@ -28,8 +28,8 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
     }
 
     private function build_wrap_start( $args ) {
-        return !empty( $args->toastmasterspl_item_wrap )
-            ? $args->toastmasterspl_item_wrap[0]
+        return !empty( $args->toastmasterspl_before_item )
+            ? $args->toastmasterspl_before_item
             : '';
     }
 
@@ -90,8 +90,8 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
     }
 
     private function build_wrap_end( $args ) {
-        return !empty( $args->toastmasterspl_item_wrap )
-            ? $args->toastmasterspl_item_wrap[1]
+        return !empty( $args->toastmasterspl_after_item )
+            ? $args->toastmasterspl_after_item
             : '';
     }
 
