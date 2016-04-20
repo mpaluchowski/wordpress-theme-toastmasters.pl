@@ -20,7 +20,7 @@
 			'depth' => 1,
 			'walker' => new Organization_Breadcrumb_Walker(),
 			'items_wrap' => '<span class="%2$s">%3$s</span>',
-			'toastmasterspl_item_class' => 'organization-breadcrumb__item',
+			'toastmasterspl_item_wrap' => ['<span class="organization-breadcrumb__item">', '</span>'],
 			'toastmasterspl_link_class' => 'organization-breadcrumb__link',
 		 ) );
 	?>
@@ -76,6 +76,8 @@
 			'container' => false,
 			'depth' => 1,
 			'items_wrap' => '%3$s',
+			'walker' => new Organization_Breadcrumb_Walker(),
+			'toastmasterspl_link_class' => 'page-navigation__link',
 		 ) );
 	?>
 </nav>
