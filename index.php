@@ -25,9 +25,9 @@
 		 ) );
 	?>
 
-	<h1 class="page-header__site-name"><?php bloginfo( 'name' ) ?></h1>
+	<div class="page-header__site-name"><?php bloginfo( 'name' ) ?></div>
 
-	<img src="<?php bloginfo( 'template_directory' ) ?>/images/toastmasters-logo.png" alt="Toastmasters International Logo" class="page-header__site-logo">
+	<?php toastmasterspl_the_custom_logo( 'page-header__site-logo' ) ?>
 </header>
 </div>
 
