@@ -66,7 +66,9 @@
         <a href="#" class="social-links__link"><i class="fa fa-fw fa-youtube"></i><span class="social-links__text">YouTube</span></a>
     </div>
 
-    <p class="page-footer__copyright">Toastmasters International, the Toastmasters International logo and all other Toastmasters International trademarks and copyrights are the sole property of <a href="http://www.toastmasters.org/" rel="external">Toastmasters International</a>. This <a href="http://www.wordpress.org">WordPress</a> template is freely <a href="https://github.com/mpaluchowski/wordpress-theme-toastmasters.pl">available on <i class="fa fa-github"></i> GitHub</a> under the Apache License, Version 2.0. Make something cool.</p>
+    <p class="page-footer__copyright">
+        <?php echo get_theme_mod( 'copyright_text' ) ?>
+        This <a href="http://www.wordpress.org">WordPress</a> template is freely <a href="https://github.com/mpaluchowski/wordpress-theme-toastmasters.pl">available on <i class="fa fa-github"></i> GitHub</a> under the Apache License, Version 2.0. Make something cool.</p>
 </footer>
 </div>
 

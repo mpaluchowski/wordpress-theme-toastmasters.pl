@@ -54,6 +54,27 @@ function toastmasterspl_widgets_init() {
 }
 add_action( 'widgets_init', 'toastmasterspl_widgets_init' );
 
+function toastmasterspl_customize_register( $wp_customize ) {
+    $wp_customize->add_section( 'toastmasterspl_options', array(
+        'title' => __( 'Toastmasters.pl Options', 'toastmasterspl' ),
+        'capability'  => 'edit_theme_options',
+    ) );
+
+    $wp_customize->add_setting( 'copyright_text', array(
+        'default' => '',
+        'type' => 'theme_mod',
+    ) );
+
+    $wp_customize->add_control( 'copyright_text_entry', array(
+        'settings' => 'copyright_text',
+        'section' => 'toastmasterspl_options',
+        'label' => __( 'Copyright Text:', 'toastmasterspl' ),
+        'description' => __( 'Shows up in the footer. HTML is allowed.', 'toastmasterspl'),
+        'type' => 'textarea',
+    ) );
+}
+add_action( 'customize_register', 'toastmasterspl_customize_register' );
+
 function toastmasterspl_the_custom_logo( $class = 'custom-logo' ) {
     $html = '';
 
