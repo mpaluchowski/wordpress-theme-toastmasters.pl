@@ -70,13 +70,14 @@
 
 <div class="page-navigation-container" id="page-navigation">
 <nav class="page-element page-navigation">
-	<a href="#" class="page-navigation__link page-navigation__link--current page-navigation__link--icon"><i class="fa fa-home"></i><span class="page-navigation__link-text">Home</span></a>
-	<a href="#" class="page-navigation__link">What is Toastmasters?</a>
-	<a href="#" class="page-navigation__link">Educational Program</a>
-	<a href="#" class="page-navigation__link">The Club Experience</a>
-	<a href="#" class="page-navigation__link">How to Join</a>
-	<a href="#" class="page-navigation__link">Find a Club</a>
-	<a href="#" class="page-navigation__link">FAQ</a>
+	<?php
+		wp_nav_menu( array(
+			'theme_location' => 'page-navigation',
+			'container' => false,
+			'depth' => 1,
+			'items_wrap' => '%3$s',
+		 ) );
+	?>
 </nav>
 </div>
 

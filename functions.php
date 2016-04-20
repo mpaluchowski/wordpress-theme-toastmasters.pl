@@ -7,6 +7,7 @@ function toastmasterspl_setup() {
     set_post_thumbnail_size( 1000, 9999 );
 
 	register_nav_menus( array(
+		'page-navigation'  => __( 'Primary Page Navigation Menu', 'toastmasterspl' ),
 		'organization-breadcrumb'  => __( 'Organization Breadcrumb Menu', 'toastmasterspl' ),
 	) );
 
