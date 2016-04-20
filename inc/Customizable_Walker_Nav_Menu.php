@@ -68,9 +68,7 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
     function end_el( &$output, $item, $depth = 0, $args = array() ) {
         $item_icon_end = $this->build_icon_end( $item, $args );
 
-        $item_wrap_end = !empty( $args->toastmasterspl_item_wrap )
-            ? $args->toastmasterspl_item_wrap[1]
-            : '';
+        $item_wrap_end = $this->build_wrap_end( $args );
 
         $item_output = $item_icon_end
             . '</a>'
@@ -88,6 +86,12 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
     private function build_icon_end( $item, $args ) {
         return $this->item_has_icon( $item, $args )
             ? '</span>'
+            : '';
+    }
+
+    private function build_wrap_end( $args ) {
+        return !empty( $args->toastmasterspl_item_wrap )
+            ? $args->toastmasterspl_item_wrap[1]
             : '';
     }
 
