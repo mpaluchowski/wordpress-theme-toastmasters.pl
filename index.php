@@ -37,7 +37,11 @@
             while ( have_posts() ) : the_post();
         ?>
 		<header class="page-content__article-header article-header">
-			<img class="article-header__image" src="featured-image.jpg" alt="Featured Image">
+            <?php
+                if ( has_post_thumbnail() ) {
+                    the_post_thumbnail( 'post-thumbnail', [ 'class' => 'article-header__image' ] );
+                }
+            ?>
             <?php the_title( '<h1 class="article-header__title">', '</h1>' ) ?>
 		</header>
 		<article class="page-content__article-text article-text">

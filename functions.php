@@ -3,6 +3,9 @@
 function toastmasterspl_setup() {
 	add_theme_support( 'title-tag' );
 
+    add_theme_support( 'post-thumbnails' );
+    set_post_thumbnail_size( 1000, 9999 );
+
 	register_nav_menus( array(
 		'organization-breadcrumb'  => __( 'Organization Breadcrumb Menu', 'toastmasterspl' ),
 	) );
