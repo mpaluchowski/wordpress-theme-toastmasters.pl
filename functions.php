@@ -3,6 +3,13 @@
 function toastmasterspl_setup() {
 	add_theme_support( 'title-tag' );
 
+	add_theme_support( 'custom-logo', array(
+		'height' => 100,
+		'width' => 100,
+		'flex-height' => false,
+		'flex-width' => true,
+	) );
+
     add_theme_support( 'post-thumbnails' );
     set_post_thumbnail_size( 1000, 9999 );
 
@@ -33,5 +40,22 @@ function toastmasterspl_scripts() {
 	wp_enqueue_style( 'toastmasterspl-style', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'toastmasterspl_scripts' );
+
+function toastmasterspl_the_custom_logo( $class = 'custom-logo' ) {
+	$html = '';
+
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+
+	// We have a logo. Logo is go.
+	if ( $custom_logo_id ) {
+		$html = wp_get_attachment_image( $custom_logo_id, 'full', false, array(
+				'class'    => $class,
+				'itemprop' => 'logo',
+			)
+		);
+	}
+
+	echo $html;
+}
 
 require get_template_directory() . '/inc/Customizable_Walker_Nav_Menu.php';
