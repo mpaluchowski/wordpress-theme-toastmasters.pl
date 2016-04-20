@@ -5,11 +5,11 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
 
         $item_wrap_start = $this->build_wrap_start( $args );
 
-        $item_icon_start = $this->build_icon_start( $item, $args );
-
         $class_link = $this->build_link_class( $item, $args );
 
         $attributes  = $this->build_link_attributes( $item );
+
+        $item_icon_start = $this->build_icon_start( $item, $args );
 
         $title = apply_filters( 'the_title', $item->title, $item->ID );
 
