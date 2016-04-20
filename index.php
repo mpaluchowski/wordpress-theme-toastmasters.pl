@@ -18,9 +18,9 @@
 			'menu_class' => 'page-header__organization-breadcrumb organization-breadcrumb',
 			'container' => false,
 			'depth' => 1,
-			'walker' => new Organization_Breadcrumb_Walker(),
+			'walker' => new Customizable_Walker_Nav_Menu(),
 			'items_wrap' => '<span class="%2$s">%3$s</span>',
-			'toastmasterspl_item_class' => 'organization-breadcrumb__item',
+			'toastmasterspl_item_wrap' => ['<span class="organization-breadcrumb__item">', '</span>'],
 			'toastmasterspl_link_class' => 'organization-breadcrumb__link',
 		 ) );
 	?>
@@ -70,13 +70,22 @@
 
 <div class="page-navigation-container" id="page-navigation">
 <nav class="page-element page-navigation">
-	<a href="#" class="page-navigation__link page-navigation__link--current page-navigation__link--icon"><i class="fa fa-home"></i><span class="page-navigation__link-text">Home</span></a>
-	<a href="#" class="page-navigation__link">What is Toastmasters?</a>
-	<a href="#" class="page-navigation__link">Educational Program</a>
-	<a href="#" class="page-navigation__link">The Club Experience</a>
-	<a href="#" class="page-navigation__link">How to Join</a>
-	<a href="#" class="page-navigation__link">Find a Club</a>
-	<a href="#" class="page-navigation__link">FAQ</a>
+	<?php
+		wp_nav_menu( array(
+			'theme_location' => 'page-navigation',
+			'container' => false,
+			'depth' => 1,
+			'items_wrap' => '%3$s',
+			'walker' => new Customizable_Walker_Nav_Menu(),
+			'toastmasterspl_link_class' => 'page-navigation__link',
+			'toastmasterspl_link_class_current' => 'page-navigation__link--current',
+			'toastmasterspl_link_icons' => [
+				1 => 'home'
+			],
+			'toastmasterspl_icon_class' => 'page-navigation__link--icon',
+			'toastmasterspl_text_class' => 'page-navigation__link-text',
+		 ) );
+	?>
 </nav>
 </div>
 

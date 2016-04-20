@@ -7,6 +7,7 @@ function toastmasterspl_setup() {
     set_post_thumbnail_size( 1000, 9999 );
 
 	register_nav_menus( array(
+		'page-navigation'  => __( 'Primary Page Navigation Menu', 'toastmasterspl' ),
 		'organization-breadcrumb'  => __( 'Organization Breadcrumb Menu', 'toastmasterspl' ),
 	) );
 
@@ -33,4 +34,4 @@ function toastmasterspl_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'toastmasterspl_scripts' );
 
-require get_template_directory() . '/inc/Organization_Breadcrumb_Walker.php';
+require get_template_directory() . '/inc/Customizable_Walker_Nav_Menu.php';
