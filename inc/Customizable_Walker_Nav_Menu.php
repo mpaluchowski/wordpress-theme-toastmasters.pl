@@ -33,6 +33,21 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
             : '';
     }
 
+    private function build_icon_start( $item, $args ) {
+        $item_icon_start = $this->item_has_icon( $item, $args )
+            ? '<i class="fa fa-' . esc_attr( $args->toastmasterspl_link_icons[ $item->menu_order ] ) . '"></i>'
+            : '';
+
+        $item_text_class = '';
+        ! empty( $args->toastmasterspl_text_class )
+            and $item_text_class .= ' class="' . esc_attr( $args->toastmasterspl_text_class ) . '"';
+
+        $this->item_has_icon( $item, $args )
+            and $item_icon_start .= "<span$item_text_class>";
+
+        return $item_icon_start;
+    }
+
     private function build_link_class( $item, $args ) {
         $class_names_link = '';
 
@@ -68,21 +83,6 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
             $depth,
             $args
         );
-    }
-
-    private function build_icon_start( $item, $args ) {
-        $item_icon_start = $this->item_has_icon( $item, $args )
-            ? '<i class="fa fa-' . esc_attr( $args->toastmasterspl_link_icons[ $item->menu_order ] ) . '"></i>'
-            : '';
-
-        $item_text_class = '';
-        ! empty( $args->toastmasterspl_text_class )
-            and $item_text_class .= ' class="' . esc_attr( $args->toastmasterspl_text_class ) . '"';
-
-        $this->item_has_icon( $item, $args )
-            and $item_icon_start .= "<span$item_text_class>";
-
-        return $item_icon_start;
     }
 
     private function build_icon_end( $item, $args ) {
