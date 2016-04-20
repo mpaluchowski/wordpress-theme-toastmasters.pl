@@ -11,6 +11,9 @@ class Organization_Breadcrumb_Walker extends Walker_Nav_Menu {
 
         ! empty ( $args->toastmasterspl_link_class )
             and $class_names_link .= ' ' . esc_attr( $args->toastmasterspl_link_class );
+        ! empty ( $args->toastmasterspl_link_class_current )
+            and $item->current
+            and $class_names_link .= ' ' . esc_attr( $args->toastmasterspl_link_class_current );
 
         ! empty ( $class_names_link )
             and $class_names_link = 'class="'. esc_attr( $class_names_link ) . '"';

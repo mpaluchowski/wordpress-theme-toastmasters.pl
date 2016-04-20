@@ -78,6 +78,7 @@
 			'items_wrap' => '%3$s',
 			'walker' => new Organization_Breadcrumb_Walker(),
 			'toastmasterspl_link_class' => 'page-navigation__link',
+			'toastmasterspl_link_class_current' => 'page-navigation__link--current',
 		 ) );
 	?>
 </nav>
