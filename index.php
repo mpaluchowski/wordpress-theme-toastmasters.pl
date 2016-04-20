@@ -79,6 +79,11 @@
 			'walker' => new Organization_Breadcrumb_Walker(),
 			'toastmasterspl_link_class' => 'page-navigation__link',
 			'toastmasterspl_link_class_current' => 'page-navigation__link--current',
+			'toastmasterspl_link_icons' => [
+				1 => 'home'
+			],
+			'toastmasterspl_icon_class' => 'page-navigation__link--icon',
+			'toastmasterspl_text_class' => 'page-navigation__link-text',
 		 ) );
 	?>
 </nav>

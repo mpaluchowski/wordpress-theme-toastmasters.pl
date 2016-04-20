@@ -7,6 +7,20 @@ class Organization_Breadcrumb_Walker extends Walker_Nav_Menu {
             ? $args->toastmasterspl_item_wrap[0]
             : '';
 
+        $item_icon_start = (
+                !empty( $args->toastmasterspl_link_icons )
+                && array_key_exists( $item->menu_order, $args->toastmasterspl_link_icons )
+            )
+            ? '<i class="fa fa-' . esc_attr( $args->toastmasterspl_link_icons[ $item->menu_order ] ) . '"></i>'
+            : '';
+
+        $item_text_class = '';
+        ! empty( $args->toastmasterspl_text_class )
+            and $item_text_class .= ' class="' . esc_attr( $args->toastmasterspl_text_class ) . '"';
+
+        ! empty( $item_icon_start )
+            and $item_icon_start .= "<span$item_text_class>";
+
         $class_names_link = '';
 
         ! empty ( $args->toastmasterspl_link_class )
@@ -14,6 +28,9 @@ class Organization_Breadcrumb_Walker extends Walker_Nav_Menu {
         ! empty ( $args->toastmasterspl_link_class_current )
             and $item->current
             and $class_names_link .= ' ' . esc_attr( $args->toastmasterspl_link_class_current );
+        ! empty ( $args->toastmasterspl_icon_class )
+            and ! empty ( $item_icon_start )
+            and $class_names_link .= ' ' . esc_attr( $args->toastmasterspl_icon_class );
 
         ! empty ( $class_names_link )
             and $class_names_link = 'class="'. esc_attr( $class_names_link ) . '"';
@@ -33,6 +50,7 @@ class Organization_Breadcrumb_Walker extends Walker_Nav_Menu {
 
         $item_output = $item_wrap_start
             . "<a $class_names_link $attributes>"
+            . $item_icon_start
             . $title;
 
         $output .= apply_filters(
@@ -44,12 +62,20 @@ class Organization_Breadcrumb_Walker extends Walker_Nav_Menu {
         );
     }
 
-    function end_el( &$output, $object, $depth = 0, $args = array() ) {
+    function end_el( &$output, $item, $depth = 0, $args = array() ) {
+        $item_icon_end = (
+                !empty( $args->toastmasterspl_link_icons )
+                && array_key_exists( $item->menu_order, $args->toastmasterspl_link_icons )
+            )
+            ? '</span>'
+            : '';
+
         $item_wrap_end = !empty( $args->toastmasterspl_item_wrap )
             ? $args->toastmasterspl_item_wrap[1]
             : '';
 
-        $item_output = '</a>'
+        $item_output = $item_icon_end
+            . '</a>'
             . $item_wrap_end;
 
         $output .= apply_filters(
