@@ -18,301 +18,301 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import "css/variables";
 
 .page-body {
-	background: #EEE;
-	display: flex;
-	flex-direction: column;
-	font-family: Roboto, Helvetica, Arial, sans-serif;
-	min-height: 100vh;
+    background: #EEE;
+    display: flex;
+    flex-direction: column;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh;
 }
 
 .page-element {
-	margin: 0 auto;
-	max-width: 1300px;
-	overflow: auto;
-	width: 100%;
+    margin: 0 auto;
+    max-width: 1300px;
+    overflow: auto;
+    width: 100%;
 }
 
 .page-header-container {
-	background: lighten($tm-crimson, 20%);
+    background: lighten($tm-crimson, 20%);
 }
 
 .page-header {
-	background: $tm-crimson;
-	box-sizing: border-box;
-	padding-bottom: 1em;
-	padding-left: 1.1rem;
-	padding-top: 1em;
-	position: relative;
+    background: $tm-crimson;
+    box-sizing: border-box;
+    padding-bottom: 1em;
+    padding-left: 1.1rem;
+    padding-top: 1em;
+    position: relative;
 }
 
-	.page-header__organization-breadcrumb {
-		float: left;
-	}
+    .page-header__organization-breadcrumb {
+        float: left;
+    }
 
-	.page-header__site-name {
-		clear: left;
-		color: #FFF;
-		float: left;
-		font-size: 3rem;
-		font-weight: bold;
-		margin: .2em 0 0;
-	}
+    .page-header__site-name {
+        clear: left;
+        color: #FFF;
+        float: left;
+        font-size: 3rem;
+        font-weight: bold;
+        margin: .2em 0 0;
+    }
 
-	.page-header__site-logo {
-		position: absolute;
-		right: 1.1rem;
+    .page-header__site-logo {
+        position: absolute;
+        right: 1.1rem;
 
-		@media #{$responsive-small} {
-			display: none;
-		}
-	}
+        @media #{$responsive-small} {
+            display: none;
+        }
+    }
 
 .organization-breadcrumb {
-	color: #FFF;
-	font-size: 1.4rem;
+    color: #FFF;
+    font-size: 1.4rem;
 }
 
-	.organization-breadcrumb__item {
-		& + .organization-breadcrumb__item:before {
-			content: ", ";
-		}
-	}
+    .organization-breadcrumb__item {
+        & + .organization-breadcrumb__item:before {
+            content: ", ";
+        }
+    }
 
-	.organization-breadcrumb__link {
-		border-bottom: 1px solid lighten($tm-crimson, 40%);
-		color: #FFF;
-		text-decoration: none;
+    .organization-breadcrumb__link {
+        border-bottom: 1px solid lighten($tm-crimson, 40%);
+        color: #FFF;
+        text-decoration: none;
 
-		&:hover {
-			border-bottom-color: #FFF;
-		}
-	}
+        &:hover {
+            border-bottom-color: #FFF;
+        }
+    }
 
 .page-content {
-	background: #FFF;
-	display: flex;
-	flex: 1;
+    background: #FFF;
+    display: flex;
+    flex: 1;
 
-	@media #{$responsive-small} {
-		flex-direction: column;
-	}
+    @media #{$responsive-small} {
+        flex-direction: column;
+    }
 
-	@media #{$responsive-large} {
-		flex-direction: row;
-	}
+    @media #{$responsive-large} {
+        flex-direction: row;
+    }
 }
 
-	.page-content__main {
-		@media #{$responsive-medium} {
-			flex: 2;
-		}
+    .page-content__main {
+        @media #{$responsive-medium} {
+            flex: 2;
+        }
 
-		@media #{$responsive-large} {
-			flex: 2.5;
-		}
-	}
+        @media #{$responsive-large} {
+            flex: 2.5;
+        }
+    }
 
-	.page-content__article-text {
-		margin: 1em 1.1rem;
-		overflow: auto;
+    .page-content__article-text {
+        margin: 1em 1.1rem;
+        overflow: auto;
 
-		@media #{$responsive-large} {
-			padding-left: 10rem;
-		}
-	}
+        @media #{$responsive-large} {
+            padding-left: 10rem;
+        }
+    }
 
-	.page-content__aside {
-		margin: 1em 1.1rem;
+    .page-content__aside {
+        margin: 1em 1.1rem;
 
-		@media #{$responsive-medium} {
-			flex: 1;
-		}
+        @media #{$responsive-medium} {
+            flex: 1;
+        }
 
-		@media #{$responsive-large} {
-			flex: 1;
-		}
-	}
+        @media #{$responsive-large} {
+            flex: 1;
+        }
+    }
 
-		.page-content__widget {
-			background: $tm-grey;
-			box-sizing: border-box;
-			padding: 1em;
+        .page-content__widget {
+            background: $tm-grey;
+            box-sizing: border-box;
+            padding: 1em;
 
-			& + .page-content__widget {
-				margin-top: 1em;
-			}
-		}
+            & + .page-content__widget {
+                margin-top: 1em;
+            }
+        }
 
 .article-header {
-	position: relative;
+    position: relative;
 }
 
-	.article-header__title {
-		background: $tm-red;
-		color: #FFF;
-		margin: 0;
-		padding: .4em 2.2rem .4em 1.1rem;
+    .article-header__title {
+        background: $tm-red;
+        color: #FFF;
+        margin: 0;
+        padding: .4em 2.2rem .4em 1.1rem;
 
-		@media #{$responsive-large} {
-			left: 0;
-			margin-left: 10rem;
-			right: 0;
-		}
-	}
+        @media #{$responsive-large} {
+            left: 0;
+            margin-left: 10rem;
+            right: 0;
+        }
+    }
 
-		.article-header--featured-image {
-			.article-header__title {
-				@media #{$responsive-medium-large} {
-					bottom: 0;
-					position: absolute;
-				}
-			}
-		}
+        .article-header--featured-image {
+            .article-header__title {
+                @media #{$responsive-medium-large} {
+                    bottom: 0;
+                    position: absolute;
+                }
+            }
+        }
 
-	.article-header__image {
-		display: block;
-		height: auto;
-		width: 100%;
-	}
+    .article-header__image {
+        display: block;
+        height: auto;
+        width: 100%;
+    }
 
 .article-text {
-	@import "css/article-text";
+    @import "css/article-text";
 
 
-	blockquote {
-		@media #{$responsive-large} {
-			margin-left: calc( -1 * ( 4px + 1.1rem ) );
-		}
-	}
+    blockquote {
+        @media #{$responsive-large} {
+            margin-left: calc( -1 * ( 4px + 1.1rem ) );
+        }
+    }
 
 }
 
 .page-footer-container {
-	background: lighten($tm-blue, 20%);
+    background: lighten($tm-blue, 20%);
 }
 
 .page-footer {
-	background: $tm-blue;
+    background: $tm-blue;
 }
 
-	.page-footer__copyright {
-		color: #FFF;
-		font-size: .8rem;
-		line-height: 140%;
-		margin: 0;
-		padding: .8rem 1.1rem;
+    .page-footer__copyright {
+        color: #FFF;
+        font-size: .8rem;
+        line-height: 140%;
+        margin: 0;
+        padding: .8rem 1.1rem;
 
-		a {
-			border-bottom: 1px solid lighten($tm-blue, 60%);
-			color: lighten($tm-blue, 40%);
-			text-decoration: none;
+        a {
+            border-bottom: 1px solid lighten($tm-blue, 60%);
+            color: lighten($tm-blue, 40%);
+            text-decoration: none;
 
-			&:hover {
-				color: lighten($tm-blue, 60%);
-			}
-		}
-	}
+            &:hover {
+                color: lighten($tm-blue, 60%);
+            }
+        }
+    }
 
-	.page-footer__social-links {
-		padding: 1em 1.1rem;
-	}
+    .page-footer__social-links {
+        padding: 1em 1.1rem;
+    }
 
 .social-links {
-	background: $tm-grey;
+    background: $tm-grey;
 }
 
-	.social-links__link {
-		display: inline-block;
-		font-size: 2rem;
-		color: #FFF;
+    .social-links__link {
+        display: inline-block;
+        font-size: 2rem;
+        color: #FFF;
 
-		&:hover {
-			color: lighten($tm-blue, 60%);
-		}
-	}
+        &:hover {
+            color: lighten($tm-blue, 60%);
+        }
+    }
 
-	.social-links__text {
-		clip: rect(1px, 1px, 1px, 1px);
-		height: 1px;
-		overflow: hidden;
-		position: absolute !important;
-		width: 1px;
-	}
+    .social-links__text {
+        clip: rect(1px, 1px, 1px, 1px);
+        height: 1px;
+        overflow: hidden;
+        position: absolute !important;
+        width: 1px;
+    }
 
 .page-navigation-container {
-	background: lighten($tm-red, 20%);
+    background: lighten($tm-red, 20%);
 
-	@media #{$responsive-large} {
-		order: -1;
-	}
+    @media #{$responsive-large} {
+        order: -1;
+    }
 }
 
 .page-navigation {
-	background: $tm-red;
+    background: $tm-red;
 }
 
-	.page-navigation__link {
-		border-bottom: 3px solid transparent;
-		color: #FFF;
-		font-size: 1.1rem;
-		padding: .4em .6em .3em;
-		text-decoration: none;
-		vertical-align: bottom;
+    .page-navigation__link {
+        border-bottom: 3px solid transparent;
+        color: #FFF;
+        font-size: 1.1rem;
+        padding: .4em .6em .3em;
+        text-decoration: none;
+        vertical-align: bottom;
 
-		@media #{$responsive-small-medium} {
-			display: table;
-		}
+        @media #{$responsive-small-medium} {
+            display: table;
+        }
 
-		@media #{$responsive-large} {
-			display: inline-block;
-		}
+        @media #{$responsive-large} {
+            display: inline-block;
+        }
 
-		&:hover, &.page-navigation__link--current {
-			border-bottom-color: #FFF;
-		}
+        &:hover, &.page-navigation__link--current {
+            border-bottom-color: #FFF;
+        }
 
-		&:first-child {
-			margin-left: 1.1rem;
-		}
+        &:first-child {
+            margin-left: 1.1rem;
+        }
 
-		& + .page-navigation__link {
-			margin-left: .4em;
-		}
-	}
+        & + .page-navigation__link {
+            margin-left: .4em;
+        }
+    }
 
-		.page-navigation__link--icon {
-			font-size: 1.4rem;
-			padding: .2em .6em;
-		}
+        .page-navigation__link--icon {
+            font-size: 1.4rem;
+            padding: .2em .6em;
+        }
 
-		.page-navigation__link--icon .page-navigation__link-text {
-			clip: rect(1px, 1px, 1px, 1px);
-			height: 1px;
-			overflow: hidden;
-			position: absolute !important;
-			width: 1px;
-		}
+        .page-navigation__link--icon .page-navigation__link-text {
+            clip: rect(1px, 1px, 1px, 1px);
+            height: 1px;
+            overflow: hidden;
+            position: absolute !important;
+            width: 1px;
+        }
 
 .page-navigation-link-container {
-	background: lighten($tm-red, 20%);
+    background: lighten($tm-red, 20%);
 
-	@media #{$responsive-small-medium} {
-		order: -1;
-	}
+    @media #{$responsive-small-medium} {
+        order: -1;
+    }
 
-	@media #{$responsive-large} {
-		display: none;
-	}
+    @media #{$responsive-large} {
+        display: none;
+    }
 }
 
 .page-navigation-link {
-	background: $tm-red;
+    background: $tm-red;
 }
 
-	.page-navigation-link__link {
-		color: #FFF;
-		font-size: 1.8rem;
-		display: block;
-		padding: .2em 1.1rem;
-		text-decoration: none;
-	}
+    .page-navigation-link__link {
+        color: #FFF;
+        font-size: 1.8rem;
+        display: block;
+        padding: .2em 1.1rem;
+        text-decoration: none;
+    }

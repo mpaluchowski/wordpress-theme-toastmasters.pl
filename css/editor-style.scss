@@ -2,8 +2,8 @@
 @import "variables";
 
 html .mceContentBody {
-	font-family: Roboto, Helvetica, Arial, sans-serif;
-	padding: 0 1.1rem;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    padding: 0 1.1rem;
 
-	@import "article-text";
+    @import "article-text";
 }
