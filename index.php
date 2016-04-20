@@ -20,8 +20,9 @@
             'depth' => 1,
             'walker' => new Customizable_Walker_Nav_Menu(),
             'items_wrap' => '<span class="%2$s">%3$s</span>',
-            'toastmasterspl_item_wrap' => ['<span class="organization-breadcrumb__item">', '</span>'],
-            'toastmasterspl_link_class' => 'organization-breadcrumb__link',
+            'customizable_before_item' => '<span class="organization-breadcrumb__item">',
+            'customizable_after_item' => '</span>',
+            'customizable_link_class' => 'organization-breadcrumb__link',
          ) );
     ?>
 
@@ -78,13 +79,13 @@
             'depth' => 1,
             'items_wrap' => '%3$s',
             'walker' => new Customizable_Walker_Nav_Menu(),
-            'toastmasterspl_link_class' => 'page-navigation__link',
-            'toastmasterspl_link_class_current' => 'page-navigation__link--current',
-            'toastmasterspl_link_icons' => [
+            'customizable_link_class' => 'page-navigation__link',
+            'customizable_link_class_current' => 'page-navigation__link--current',
+            'customizable_link_icons' => [
                 1 => 'home'
             ],
-            'toastmasterspl_icon_class' => 'page-navigation__link--icon',
-            'toastmasterspl_text_class' => 'page-navigation__link-text',
+            'customizable_icon_class' => 'page-navigation__link--icon',
+            'customizable_text_class' => 'page-navigation__link-text',
          ) );
     ?>
 </nav>
