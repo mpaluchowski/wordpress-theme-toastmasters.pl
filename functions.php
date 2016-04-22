@@ -45,7 +45,7 @@ function toastmasterspl_widgets_init() {
     register_sidebar( array(
         'name'          => __( 'Sidebar', 'toastmasterspl' ),
         'id'            => 'sidebar-page-content',
-        'description'   => __( 'Add widgets here to appear in your sidebar.', 'toastmasterspl' ),
+        'description'   => __( 'Add widgets here to appear in the right-hand column.', 'toastmasterspl' ),
         'before_widget' => '<aside id="%1$s" class="page-content__widget sidebar-widget %2$s">',
         'after_widget'  => '</aside>',
         'before_title'  => '<h2 class="sidebar-widget__title">',
