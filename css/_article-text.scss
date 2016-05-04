@@ -1,3 +1,7 @@
+& {
+    line-height: 1.428;
+}
+
 h2 {
     color: $tm-blue;
 }
@@ -14,10 +18,6 @@ ul > li {
         position: absolute;
         vertical-align: top;
     }
-}
-
-p {
-    line-height: 1.428;
 }
 
 blockquote {
