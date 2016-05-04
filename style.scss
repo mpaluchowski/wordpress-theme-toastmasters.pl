@@ -91,7 +91,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .page-content {
     background: #FFF;
     display: flex;
-    flex: 1;
+    flex: 1 1 auto;
 
     @media #{$responsive-small} {
         flex-direction: column;
