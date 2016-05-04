@@ -255,6 +255,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .page-navigation {
     background: $tm-red;
+
+    @media #{$responsive-small-medium} {
+        height: 100vh;
+    }
 }
 
     .page-navigation__link {
@@ -267,36 +271,52 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
         @media #{$responsive-small-medium} {
             display: table;
+            margin-left: .4em;
         }
 
         @media #{$responsive-large} {
             display: inline-block;
+
+            &:first-child {
+                margin-left: 1.1rem;
+            }
+
+            & + .page-navigation__link {
+                margin-left: .4em;
+            }
         }
 
         &:hover, &.page-navigation__link--current {
             border-bottom-color: #FFF;
         }
-
-        &:first-child {
-            margin-left: 1.1rem;
-        }
-
-        & + .page-navigation__link {
-            margin-left: .4em;
-        }
     }
 
         .page-navigation__link--icon {
-            font-size: 1.4rem;
-            padding: .2em .6em;
+            @media #{$responsive-small-medium} {
+                .fa {
+                    font-size: 1.4rem;
+                    vertical-align: bottom;
+                }
+            }
+
+            @media #{$responsive-large} {
+                font-size: 1.4rem;
+                padding: .2em .6em;
+            }
         }
 
         .page-navigation__link--icon .page-navigation__link-text {
-            clip: rect(1px, 1px, 1px, 1px);
-            height: 1px;
-            overflow: hidden;
-            position: absolute !important;
-            width: 1px;
+            @media #{$responsive-small-medium} {
+                margin-left: .4em;
+            }
+
+            @media #{$responsive-large} {
+                clip: rect(1px, 1px, 1px, 1px);
+                height: 1px;
+                overflow: hidden;
+                position: absolute !important;
+                width: 1px;
+            }
         }
 
 .page-navigation-link-container {
