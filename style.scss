@@ -271,22 +271,23 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
         @media #{$responsive-small-medium} {
             display: table;
+            margin-left: .4em;
         }
 
         @media #{$responsive-large} {
             display: inline-block;
+
+            &:first-child {
+                margin-left: 1.1rem;
+            }
+
+            & + .page-navigation__link {
+                margin-left: .4em;
+            }
         }
 
         &:hover, &.page-navigation__link--current {
             border-bottom-color: #FFF;
-        }
-
-        &:first-child {
-            margin-left: 1.1rem;
-        }
-
-        & + .page-navigation__link {
-            margin-left: .4em;
         }
     }
 
