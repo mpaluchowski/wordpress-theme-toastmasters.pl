@@ -68,6 +68,8 @@
             'depth' => 1,
             'items_wrap' => '<div class="%2$s">%3$s</div>',
             'walker' => new Social_Walker_Nav_Menu(),
+            'social_link_class' => 'social-links__link',
+            'social_text_class' => 'social-links__text',
          ) );
     ?>
 
