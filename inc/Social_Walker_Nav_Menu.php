@@ -37,7 +37,7 @@ class Social_Walker_Nav_Menu extends Walker_Nav_Menu {
             $matches
             );
 
-        return $matches[1];
+        return strtolower( $matches[1] );
     }
 
 }
