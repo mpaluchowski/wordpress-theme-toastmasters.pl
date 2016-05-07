@@ -94,3 +94,4 @@ function toastmasterspl_the_custom_logo( $class = 'custom-logo' ) {
 }
 
 require get_template_directory() . '/inc/Customizable_Walker_Nav_Menu.php';
+require get_template_directory() . '/inc/Social_Walker_Nav_Menu.php';
