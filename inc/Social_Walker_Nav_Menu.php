@@ -7,8 +7,7 @@ class Social_Walker_Nav_Menu extends Walker_Nav_Menu {
             . '><i class="fa fa-fw fa-'
             . $this->build_social_icon_name( $item )
             . '"></i><span class="social-links__text">'
-            . apply_filters( 'the_title', $item->title, $item->ID )
-            . '</span></a>';
+            . apply_filters( 'the_title', $item->title, $item->ID );
 
         $output .= apply_filters(
             'walker_nav_menu_start_el',
@@ -38,6 +37,16 @@ class Social_Walker_Nav_Menu extends Walker_Nav_Menu {
             );
 
         return strtolower( $matches[1] );
+    }
+
+    function end_el( &$output, $item, $depth = 0, $args = array() ) {
+        $output .= apply_filters(
+            'walker_nav_menu_end_el',
+            '</span></a>',
+            $item,
+            $depth,
+            $args
+        );
     }
 
 }
