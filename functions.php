@@ -16,6 +16,7 @@ function toastmasterspl_setup() {
     register_nav_menus( array(
         'page-navigation'  => __( 'Primary Page Navigation Menu', 'toastmasterspl' ),
         'organization-breadcrumb'  => __( 'Organization Breadcrumb Menu', 'toastmasterspl' ),
+        'social-links'  => __( 'Social Links Menu', 'toastmasterspl' ),
     ) );
 
     add_editor_style( array( 'css/editor-style.css' ) );
@@ -93,3 +94,4 @@ function toastmasterspl_the_custom_logo( $class = 'custom-logo' ) {
 }
 
 require get_template_directory() . '/inc/Customizable_Walker_Nav_Menu.php';
+require get_template_directory() . '/inc/Social_Walker_Nav_Menu.php';

@@ -60,11 +60,18 @@
 
 <div class="page-footer-container">
 <footer class="page-element page-footer">
-    <div class="page-footer__social-links social-links">
-        <a href="https://www.facebook.com/ToastmastersPolskaPL/" class="social-links__link"><i class="fa fa-fw fa-facebook"></i><span class="social-links__text">Facebook</span></a>
-        <a href="#" class="social-links__link"><i class="fa fa-fw fa-twitter"></i><span class="social-links__text">Twitter</span></a>
-        <a href="#" class="social-links__link"><i class="fa fa-fw fa-youtube"></i><span class="social-links__text">YouTube</span></a>
-    </div>
+    <?php
+        wp_nav_menu( array(
+            'theme_location' => 'social-links',
+            'menu_class' => 'page-footer__social-links social-links',
+            'container' => false,
+            'depth' => 1,
+            'items_wrap' => '<div class="%2$s">%3$s</div>',
+            'walker' => new Social_Walker_Nav_Menu(),
+            'social_link_class' => 'social-links__link',
+            'social_text_class' => 'social-links__text',
+         ) );
+    ?>
 
     <p class="page-footer__copyright">
         <?php echo get_theme_mod( 'copyright_text' ) ?>
