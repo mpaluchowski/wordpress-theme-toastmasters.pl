@@ -16,6 +16,7 @@ function toastmasterspl_setup() {
     register_nav_menus( array(
         'page-navigation'  => __( 'Primary Page Navigation Menu', 'toastmasterspl' ),
         'organization-breadcrumb'  => __( 'Organization Breadcrumb Menu', 'toastmasterspl' ),
+        'social-links'  => __( 'Social Links Menu', 'toastmasterspl' ),
     ) );
 
     add_editor_style( array( 'css/editor-style.css' ) );
