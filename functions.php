@@ -26,7 +26,7 @@ add_action( 'after_setup_theme', 'toastmasterspl_setup' );
 function toastmasterspl_scripts() {
     wp_enqueue_style(
         'toastmasterspl-fontawesome',
-        'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css',
+        'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css',
         array(),
         null
         );
