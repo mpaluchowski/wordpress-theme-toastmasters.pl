@@ -172,8 +172,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
     }
 
 .article-text {
-    @import "css/article-text";
+    max-width: 45em;
 
+    @import "css/article-text";
 
     blockquote {
         @media #{$responsive-large} {
