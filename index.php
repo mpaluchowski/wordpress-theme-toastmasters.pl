@@ -5,6 +5,23 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <?php if ( is_singular() ): ?>
+    <meta name="description" content="<?php echo toastmasterspl_get_excerpt( 0, 30 ) ?>">
+    <meta property="og:url" content="<?php the_permalink() ?>">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="<?php single_post_title() ?>">
+    <meta property="og:description" content="<?php echo toastmasterspl_get_excerpt( 0, 30 ) ?>">
+    <?php else: ?>
+    <meta name="description" content="<?php bloginfo( 'description' ) ?>">
+    <meta property="og:url" content="<?php echo trailingslashit( home_url( $wp->request ) ) ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<?php bloginfo( 'name' ) ?>">
+    <meta property="og:description" content="<?php bloginfo( 'description' ) ?>">
+    <?php endif; ?>
+    <?php if ( has_post_thumbnail() ): ?>
+    <meta property="og:image" content="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id() )[0] ?>">
+    <?php endif; ?>
+
     <?php wp_head() ?>
 </head>
 
