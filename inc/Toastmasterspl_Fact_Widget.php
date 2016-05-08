@@ -14,12 +14,14 @@ class Toastmasterspl_Fact_Widget extends WP_Widget {
     }
 
     function widget( $args, $instance ) {
+        echo $args['before_widget'];
         ?>
         <div class="fact-widget">
             <div class="fact-widget__fact fact-widget__fact-major"><?php echo $instance['fact_major'] ?></div>
             <?php if ( !empty( $instance['fact_minor'] ) ): ?><div class="fact-widget__fact fact-widget__fact-minor"><?php echo $instance['fact_minor'] ?></div><?php endif; // !empty fact_minor ?>
         </div>
         <?php
+        echo $args['after_widget'];
     }
 
     function form( $instance ) {

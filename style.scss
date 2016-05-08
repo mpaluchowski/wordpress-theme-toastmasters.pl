@@ -185,9 +185,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 .sidebar-widget {
-    background: $tm-grey;
     box-sizing: border-box;
-    padding: 1em;
+
+    &.widget_text {
+
+        background: $tm-grey;
+        padding: 1em;
+    }
 }
 
     .sidebar-widget__title {
