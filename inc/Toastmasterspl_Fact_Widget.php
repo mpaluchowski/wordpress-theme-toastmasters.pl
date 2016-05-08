@@ -30,11 +30,11 @@ class Toastmasterspl_Fact_Widget extends WP_Widget {
 
         ?>
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'fact_major' ) ); ?>"><?php _e( 'Major fact', 'toastmasterspl' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'fact_major' ) ); ?>"><?php _e( 'Major fact:', 'toastmasterspl' ); ?></label>
             <input id="<?php echo esc_attr( $this->get_field_id( 'fact_major' ) ); ?>" class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'fact_major' ) ); ?>" type="text" value="<?php echo esc_attr( $fact_major ); ?>">
         </p>
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'fact_minor' ) ); ?>"><?php _e( 'Minor fact', 'toastmasterspl' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'fact_minor' ) ); ?>"><?php _e( 'Minor fact:', 'toastmasterspl' ); ?></label>
             <input id="<?php echo esc_attr( $this->get_field_id( 'fact_minor' ) ); ?>" class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'fact_minor' ) ); ?>" type="text" value="<?php echo esc_attr( $fact_minor ); ?>">
         </p>
         <?php
