@@ -32,6 +32,8 @@ class Social_Walker_Nav_Menu extends Walker_Nav_Menu {
     private function build_link_attributes( $item ) {
         $attributes  = '';
 
+        ! empty( $item->target )
+            and $attributes .= ' target="' . esc_attr( $item->target ) .'"';
         ! empty( $item->url )
             and $attributes .= ' href="' . esc_attr( $item->url ) .'"';
 
