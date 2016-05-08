@@ -17,7 +17,7 @@ A custom WordPress theme for the [Toastmasters in Poland website](http://www.toa
 
 * [PHP](http://php.net/) 5.6 or newer,
 * [WordPress](https://wordpress.org/) 4.5 or newer,
-* supports Internet Explorer 11, Edge and any current version of Chrome or FireFox. This is mostly due to use of [CSS flexbox](http://caniuse.com/#feat=flexbox).
+* supports Internet Explorer 11, Edge and any current version of Chrome or Firefox. This is mostly due to use of [CSS flexbox](http://caniuse.com/#feat=flexbox).
 
 ## Installation
 
