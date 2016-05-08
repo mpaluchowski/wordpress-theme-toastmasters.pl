@@ -185,14 +185,61 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 .sidebar-widget {
-    background: $tm-grey;
     box-sizing: border-box;
-    padding: 1em;
+
+    &.widget_text {
+
+        background: $tm-grey;
+        padding: 1em;
+    }
 }
 
     .sidebar-widget__title {
         margin-top: 0;
     }
+
+.fact-widget {
+    padding: 1em;
+}
+
+    .fact-widget--blue {
+        background: $tm-blue;
+        color: #FFF;
+    }
+
+    .fact-widget--yellow {
+        background: $tm-yellow;
+    }
+
+    .fact-widget--grey {
+        background: $tm-grey;
+    }
+
+    .fact-widget--red {
+        background: $tm-red;
+        color: #FFF;
+    }
+
+    .fact-widget--burgundy {
+        background: $tm-crimson;
+        color: #FFF;
+    }
+
+    .fact-widget__fact {
+    }
+
+        .fact-widget__fact-major {
+        font-weight: bold;
+            font: {
+                size: 2.2rem;
+            }
+        }
+
+        .fact-widget__fact-minor {
+            font: {
+                size: 1.6rem;
+            }
+        }
 
 .page-footer-container {
     background: lighten($tm-blue, 20%);

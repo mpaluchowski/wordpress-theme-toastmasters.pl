@@ -43,6 +43,9 @@ function toastmasterspl_scripts() {
 add_action( 'wp_enqueue_scripts', 'toastmasterspl_scripts' );
 
 function toastmasterspl_widgets_init() {
+    require get_template_directory() . '/inc/Toastmasterspl_Fact_Widget.php';
+    register_widget( 'Toastmasterspl_Fact_Widget' );
+
     register_sidebar( array(
         'name'          => __( 'Sidebar', 'toastmasterspl' ),
         'id'            => 'sidebar-page-content',
