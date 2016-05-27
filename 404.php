@@ -10,8 +10,13 @@
 <body <?php body_class( 'page-404-body' ) ?>>
 
 <main class="page-404-content">
-    <h1><?php _e( 'Oops! No page here', 'toastmasterspl' ); ?></h1>
-    <p><?php _e( "We couldn't find anything at this location. Maybe it went missing, or maybe it was never here in the first place. Try <a href=\"" . home_url() . "\">starting from home</a>.", 'toastmasterspl' ); ?></p>
+    <div class="page-404-content__pictogram">
+        :(
+    </div>
+    <div class="page-404-content__text">
+        <h1><?php _e( 'Oops! No page here', 'toastmasterspl' ); ?></h1>
+        <p><?php _e( "We couldn't find anything at this location. Maybe it went missing, or maybe it was never here in the first place. Try <a href=\"" . home_url() . "\">starting from home</a>.", 'toastmasterspl' ); ?></p>
+    </div>
 </main>
 
 <?php wp_footer() ?>

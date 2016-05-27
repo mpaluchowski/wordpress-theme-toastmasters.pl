@@ -31,22 +31,36 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .page-404-content {
     background: #FFF;
     box-sizing: border-box;
-    padding: .6em 1em;
-    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
     max-width: 650px;
-    line-height: 1.428;
+    padding: .6em 1em;
+    align-items: center;
+}
 
-    a {
-        border-bottom: 1px solid lighten($tm-red, 40%);
-        color: $tm-red;
-        text-decoration: none;
+    .page-404-content__pictogram {
+        flex: 1 1 auto;
+        font-size: 6rem;
+        padding: 0 2rem 0 1rem;
+        white-space: nowrap;
+    }
 
-        &:hover {
-            border-bottom-color: $tm-crimson;
-            color: $tm-crimson;
+    .page-404-content__text {
+        flex: auto;
+        line-height: 1.428;
+
+        a {
+            border-bottom: 1px solid lighten($tm-red, 40%);
+            color: $tm-red;
+            text-decoration: none;
+
+            &:hover {
+                border-bottom-color: $tm-crimson;
+                color: $tm-crimson;
+            }
         }
     }
-}
 
 /* Regular Content */
 
