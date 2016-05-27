@@ -37,7 +37,7 @@
             'depth' => 1,
             'walker' => new Customizable_Walker_Nav_Menu(),
             'items_wrap' => '<span class="%2$s">%3$s</span>',
-            'customizable_before_item' => '<span class="organization-breadcrumb__item" itemprop="url">',
+            'customizable_before_item' => '<span class="organization-breadcrumb__item">',
             'customizable_after_item' => '</span>',
             'customizable_link_class' => 'organization-breadcrumb__link',
          ) );

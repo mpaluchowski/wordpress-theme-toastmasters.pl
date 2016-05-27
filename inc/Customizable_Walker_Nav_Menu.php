@@ -71,7 +71,7 @@ class Customizable_Walker_Nav_Menu extends Walker_Nav_Menu {
     }
 
     private function build_link_attributes( $item ) {
-        $attributes  = '';
+        $attributes  = 'itemprop="url"';
 
         ! empty( $item->attr_title )
             and $attributes .= ' title="' . esc_attr( $item->attr_title ) .'"';
