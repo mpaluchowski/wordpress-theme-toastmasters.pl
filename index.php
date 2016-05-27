@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html <?php language_attributes() ?>>
-<head>
+<head itemscope itemtype="http://schema.org/WebSite">
     <meta charset="<?php bloginfo( 'charset' ) ?>">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <?php if ( is_singular() ): ?>
+    <meta name="description" content="<?php echo toastmasterspl_get_excerpt( 0, 30 ) ?>">
+    <meta property="og:url" content="<?php the_permalink() ?>">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="<?php single_post_title() ?>">
+    <meta property="og:description" content="<?php echo toastmasterspl_get_excerpt( 0, 30 ) ?>">
+    <?php else: ?>
+    <meta name="description" content="<?php bloginfo( 'description' ) ?>">
+    <meta property="og:url" content="<?php echo trailingslashit( home_url( $wp->request ) ) ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<?php bloginfo( 'name' ) ?>">
+    <meta property="og:description" content="<?php bloginfo( 'description' ) ?>">
+    <?php endif; ?>
+    <?php if ( has_post_thumbnail() ): ?>
+    <meta property="og:image" content="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id() )[0] ?>">
+    <?php endif; ?>
+
     <?php wp_head() ?>
 </head>
 
-<body <?php body_class( 'page-body' ) ?>>
+<body <?php body_class( 'page-body' ) ?> itemscope itemtype="http://schema.org/WebPage">
 
 <div class="page-header-container">
-<header class="page-element page-header">
+<header class="page-element page-header" itemscope itemtype="http://schema.org/WPHeader">
     <?php
         wp_nav_menu( array(
             'theme_location' => 'organization-breadcrumb',
@@ -26,14 +43,14 @@
          ) );
     ?>
 
-    <div class="page-header__site-name"><?php bloginfo( 'name' ) ?></div>
+    <div class="page-header__site-name" itemprop="headline"><?php bloginfo( 'name' ) ?></div>
 
     <?php toastmasterspl_the_custom_logo( 'page-header__site-logo' ) ?>
 </header>
 </div>
 
 <main class="page-element page-content">
-    <div class="page-content__main">
+    <div class="page-content__main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">
         <?php
             while ( have_posts() ) : the_post();
         ?>
@@ -43,23 +60,23 @@
                     the_post_thumbnail( 'post-thumbnail', [ 'class' => 'article-header__image' ] );
                 }
             ?>
-            <?php the_title( '<h1 class="article-header__title">', '</h1>' ) ?>
+            <?php the_title( '<h1 class="article-header__title" itemprop="headline">', '</h1>' ) ?>
         </header>
-        <article class="page-content__article-text article-text">
+        <article class="page-content__article-text article-text" itemprop="text">
             <?php the_content() ?>
         </article>
         <?php endwhile; // have_posts() ?>
     </div>
 
     <?php if ( is_active_sidebar( 'sidebar-page-content' )  ) : ?>
-    <div class="page-content__aside">
+    <div class="page-content__aside" itemscope itemtype="http://schema.org/WPSideBar">
         <?php dynamic_sidebar( 'sidebar-page-content' ); ?>
     </div>
     <?php endif; ?>
 </main>
 
 <div class="page-footer-container">
-<footer class="page-element page-footer">
+<footer class="page-element page-footer" itemscope itemtype="http://schema.org/WPFooter">
     <?php
         wp_nav_menu( array(
             'theme_location' => 'social-links',
@@ -80,7 +97,7 @@
 </div>
 
 <div class="page-navigation-container" id="page-navigation">
-<nav class="page-element page-navigation">
+<nav class="page-element page-navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
     <?php
         wp_nav_menu( array(
             'theme_location' => 'page-navigation',

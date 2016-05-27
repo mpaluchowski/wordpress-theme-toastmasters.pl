@@ -96,5 +96,21 @@ function toastmasterspl_the_custom_logo( $class = 'custom-logo' ) {
     echo $html;
 }
 
+/**
+ * Allows for getting the excerpt outside of The Loop.
+ */
+function toastmasterspl_get_excerpt( $post_id = 0, $length = 35 ) {
+    $post = get_post( $post_id );
+    $the_excerpt = $post->post_content;
+    $the_excerpt = strip_tags( strip_shortcodes( $the_excerpt ) );
+    $words = explode( ' ', $the_excerpt, $length + 1 );
+    if ( count( $words ) > $length ) {
+        array_pop( $words );
+        array_push( $words, '...' );
+        $the_excerpt = implode( ' ', $words );
+    }
+    return htmlspecialchars( $the_excerpt );
+}
+
 require get_template_directory() . '/inc/Customizable_Walker_Nav_Menu.php';
 require get_template_directory() . '/inc/Social_Walker_Nav_Menu.php';
