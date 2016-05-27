@@ -28,7 +28,7 @@
 <body <?php body_class( 'page-body' ) ?> itemscope itemtype="http://schema.org/WebPage">
 
 <div class="page-header-container">
-<header class="page-element page-header" itemscope itemtype="http://schema.org/WPHeader">
+<header class="page-element page-header" itemscope itemtype="http://schema.org/Organization">
     <?php
         wp_nav_menu( array(
             'theme_location' => 'organization-breadcrumb',
@@ -37,13 +37,13 @@
             'depth' => 1,
             'walker' => new Customizable_Walker_Nav_Menu(),
             'items_wrap' => '<span class="%2$s">%3$s</span>',
-            'customizable_before_item' => '<span class="organization-breadcrumb__item">',
+            'customizable_before_item' => '<span class="organization-breadcrumb__item" itemprop="url">',
             'customizable_after_item' => '</span>',
             'customizable_link_class' => 'organization-breadcrumb__link',
          ) );
     ?>
 
-    <div class="page-header__site-name" itemprop="headline"><?php bloginfo( 'name' ) ?></div>
+    <div class="page-header__site-name" itemprop="name"><?php bloginfo( 'name' ) ?></div>
 
     <?php toastmasterspl_the_custom_logo( 'page-header__site-logo' ) ?>
 </header>
