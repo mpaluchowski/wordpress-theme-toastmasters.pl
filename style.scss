@@ -17,6 +17,53 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 @import "css/variables";
 
+/* 404 Page */
+
+.page-404-body {
+    align-items: center;
+    background: #EEE;
+    display: flex;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    justify-content: center;
+    height: 100vh;
+}
+
+.page-404-content {
+    background: #FFF;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    max-width: 650px;
+    padding: .6em 1em;
+    align-items: center;
+}
+
+    .page-404-content__pictogram {
+        flex: 1 1 auto;
+        font-size: 6rem;
+        padding: 0 2rem 0 1rem;
+        white-space: nowrap;
+    }
+
+    .page-404-content__text {
+        flex: auto;
+        line-height: 1.428;
+
+        a {
+            border-bottom: 1px solid lighten($tm-red, 40%);
+            color: $tm-red;
+            text-decoration: none;
+
+            &:hover {
+                border-bottom-color: $tm-crimson;
+                color: $tm-crimson;
+            }
+        }
+    }
+
+/* Regular Content */
+
 .page-body {
     background: #EEE;
     display: flex;
