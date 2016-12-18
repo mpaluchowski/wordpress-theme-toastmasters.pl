@@ -37,6 +37,10 @@ a {
     }
 }
 
+img {
+    max-width: 100%;
+}
+
 mark {
     background: lighten($tm-blue, 60%);
 }
