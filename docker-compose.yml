@@ -1,0 +1,15 @@
+version: '2'
+services:
+    wordpress:
+        image: wordpress:6-apache
+        ports:
+            - 80:80
+        links:
+            - mariadb
+        volumes:
+            - .:/var/www/html/wp-content/themes/toastmasterspl
+    mariadb:
+        image: mariadb:10
+        environment:
+            MARIADB_RANDOM_ROOT_PASSWORD: 'yes'
+            MARIADB_DATABASE: 'wordpress'
