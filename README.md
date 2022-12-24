@@ -25,7 +25,7 @@ A custom WordPress theme for the [Toastmasters in Poland website](http://www.toa
 2. Parse the [SASS](http://sass-lang.com/) files into proper CSS:
 
     ```
-    sass --no-source-map --style=compressed -E UTF-8 --update wp-content/themes/toastmasterspl/
+    sass --no-source-map --style=compressed --update wp-content/themes/toastmasterspl/
     ```
 3. The theme should now be available in your Themes WordPress section. You can activate it and customize to your liking.
 
