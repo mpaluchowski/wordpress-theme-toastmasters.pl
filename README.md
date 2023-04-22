@@ -72,6 +72,18 @@ The social links menu at the bottom expects __custom links__ with URLs to popula
     * as Label enter the name of the social network, eg. `Facebook`.
 3. Set the menu to appear in the __Social Links__ placement.
 
+## Developing
+
+You'll need a proper Wordpress installation to test the theme. To ease that setup, there's a `docker-compose.yml` file in the repository that runs a vanilla Wordpress on MariaDB. You can start it by running:
+
+```shell
+docker-compose up
+```
+
+from the main directory, then open http://localhost in a web browser and follow the Wordpress installation procedure. You'll find the database root password in the console output from `docker-compose`.
+
+You can stop it by calling `docker-compose stop` or destroy it with `docker-compose down`. Keep in mind that `down` will also destroy all the state, so the next time you call `up` you'll have to re-run the Wordpress installation.
+
 ## License
 
 Copyright 2016 Michał Paluchowski
