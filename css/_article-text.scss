@@ -1,16 +1,19 @@
+@use "sass:color";
+@use "variables";
+
 & {
     line-height: 1.5;
 }
 
 h2 {
-    color: $tm-blue;
+    color: variables.$tm-blue;
 }
 
 ul > li {
     list-style: none;
 
     &:before {
-        color: $tm-crimson;
+        color: variables.$tm-crimson;
         content: "\025AA";
         font-size: 2.6rem;
         line-height: 1.428rem;
@@ -20,20 +23,20 @@ ul > li {
 }
 
 blockquote {
-    border-left: 4px solid $tm-grey;
+    border-left: 4px solid variables.$tm-grey;
     box-sizing: border-box;
     margin-left: 0;
     padding-left: 1.1rem;
 }
 
 a {
-    border-bottom: 1px solid lighten($tm-red, 40%);
-    color: $tm-red;
+    border-bottom: 1px solid color.adjust(variables.$tm-red, $lightness: 40%);
+    color: variables.$tm-red;
     text-decoration: none;
 
     &:hover {
-        border-bottom-color: $tm-crimson;
-        color: $tm-crimson;
+        border-bottom-color: variables.$tm-crimson;
+        color: variables.$tm-crimson;
     }
 }
 
@@ -42,5 +45,5 @@ img {
 }
 
 mark {
-    background: lighten($tm-blue, 60%);
+    background: color.adjust(variables.$tm-blue, $lightness: 60%);
 }
