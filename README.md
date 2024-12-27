@@ -77,12 +77,12 @@ The social links menu at the bottom expects __custom links__ with URLs to popula
 You'll need a proper Wordpress installation to test the theme. To ease that setup, there's a `docker-compose.yml` file in the repository that runs a vanilla Wordpress on MariaDB. You can start it by running:
 
 ```shell
-docker-compose up
+docker compose up
 ```
 
-from the main directory, then open http://localhost in a web browser and follow the Wordpress installation procedure. You'll find the database root password in the console output from `docker-compose`.
+from the main directory, then open http://localhost in a web browser and follow the Wordpress installation procedure. You'll find the database root password in the console output from `docker compose`.
 
-You can stop it by calling `docker-compose stop` or destroy it with `docker-compose down`. Keep in mind that `down` will also destroy all the state, so the next time you call `up` you'll have to re-run the Wordpress installation.
+You can stop it by calling `docker compose stop` or destroy it with `docker compose down`. Keep in mind that `down` will also destroy all the state, so the next time you call `up` you'll have to re-run the Wordpress installation.
 
 ## License
 
