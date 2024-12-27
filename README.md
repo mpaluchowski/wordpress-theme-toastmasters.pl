@@ -1,6 +1,6 @@
 # WordPress Theme for www.toastmasters.pl
 
-A custom WordPress theme for the [Toastmasters in Poland website](http://www.toastmasters.pl/). Uses the official Toastmasters color system, as defined by the organization's [Brand Guidelines](https://www.toastmasters.org/Leadership-Central/Logos-Images-and-Templates), but with a fresh twist to underline the youth dynamic of the organization in Poland.
+A custom WordPress theme for the [Toastmasters in Poland website](http://www.toastmasters.pl/). Uses the official Toastmasters color system, as defined by the organization's [Brand Guidelines](https://www.toastmasters.org/resources), but with a fresh twist to underline the youth dynamic of the organization in Poland.
 
 ## Screenshot
 
@@ -8,8 +8,8 @@ A custom WordPress theme for the [Toastmasters in Poland website](http://www.toa
 
 ## Features
 
-* self-contained---doesn't rely on external widgets or plug-ins,
-* fully responsive---works on any screen size,
+* self-contained – doesn't rely on external widgets or plug-ins,
+* fully responsive – works on any screen size,
 * HTML5 and CSS3,
 * support for translations.
 
@@ -17,7 +17,7 @@ A custom WordPress theme for the [Toastmasters in Poland website](http://www.toa
 
 * [PHP](http://php.net/) 5.6 or newer,
 * [WordPress](https://wordpress.org/) 4.5 or newer,
-* supports Internet Explorer 11, Edge and any current version of Chrome or Firefox. This is mostly due to use of [CSS flexbox](http://caniuse.com/#feat=flexbox).
+* supports Internet Explorer 11, Edge and any current version of Chrome or Firefox. This is mostly due to the use of [CSS flexbox](http://caniuse.com/#feat=flexbox).
 
 ## Installation
 
@@ -54,7 +54,7 @@ The main navigation menu contains links to subpages of the website. It expects p
 
 ### Organization Breadcrumb Navigation
 
-The organization breadcrumb menu displays a coma-separated list of links above the page title. It expects custom links to websites of higher organizational structures, eg. Toastmasters International and District 95.
+The organization breadcrumb menu displays a comma-separated list of links above the page title. It expects custom links to websites of higher organizational structures, eg. Toastmasters International and District 95.
 
 1. Create a new menu, call it eg. "Organization Breadcrumb",
 2. Add a few custom links (not too many so that the links don't break into multiple lines),
