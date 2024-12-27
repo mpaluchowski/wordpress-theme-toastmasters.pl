@@ -1,9 +1,10 @@
 
-@import "variables";
+@use "sass:meta";
+@use "variables";
 
 html .mceContentBody {
     font-family: Roboto, Helvetica, Arial, sans-serif;
     padding: 0 1.1rem;
 
-    @import "article-text";
+    @include meta.load-css("article-text");
 }
