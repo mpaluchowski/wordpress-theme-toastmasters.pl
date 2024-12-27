@@ -4,8 +4,6 @@ services:
         image: wordpress:6-apache
         ports:
             - 80:80
-        links:
-            - mariadb
         volumes:
             - .:/var/www/html/wp-content/themes/toastmasterspl
     mariadb:
