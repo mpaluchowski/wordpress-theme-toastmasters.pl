@@ -37,16 +37,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
     max-width: 650px;
     padding: .6em 1em;
     align-items: center;
-}
 
-    .page-404-content__pictogram {
+    &__pictogram {
         flex: 1 1 auto;
         font-size: 6rem;
         padding: 0 2rem 0 1rem;
         white-space: nowrap;
     }
 
-    .page-404-content__text {
+    &__text {
         flex: auto;
         line-height: 1.5;
 
@@ -61,6 +60,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
             }
         }
     }
+}
 
 /* Regular Content */
 
@@ -90,13 +90,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
     padding-left: 1.1rem;
     padding-top: 1em;
     position: relative;
-}
 
-    .page-header__organization-breadcrumb {
+    &__organization-breadcrumb {
         float: left;
     }
 
-    .page-header__site-name {
+    &__site-name {
         clear: left;
         color: #FFF;
         float: left;
@@ -105,7 +104,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
         margin: .2em 0 0;
     }
 
-    .page-header__site-logo {
+    &__site-logo {
         position: absolute;
         right: 1.1rem;
 
@@ -113,19 +112,19 @@ Use it to make something cool, have fun, and share what you've learned with othe
             display: none;
         }
     }
+}
 
 .organization-breadcrumb {
     color: #FFF;
     font-size: 1.4rem;
-}
 
-    .organization-breadcrumb__item {
+    &__item {
         & + .organization-breadcrumb__item:before {
             content: ", ";
         }
     }
 
-    .organization-breadcrumb__link {
+    &__link {
         border-bottom: 1px solid lighten($tm-crimson, 40%);
         color: #FFF;
         text-decoration: none;
@@ -134,6 +133,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
             border-bottom-color: #FFF;
         }
     }
+}
+
 
 .page-content {
     background: #FFF;
@@ -147,9 +148,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
     @media #{$responsive-large} {
         flex-direction: row;
     }
-}
 
-    .page-content__main {
+    &__main {
         @media #{$responsive-medium} {
             flex: 2;
         }
@@ -159,7 +159,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
         }
     }
 
-    .page-content__article-text {
+    &__article-text {
         margin: 1em 1.1rem;
         overflow: auto;
 
@@ -168,7 +168,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
         }
     }
 
-    .page-content__aside {
+    &__aside {
         margin: 1em 1.1rem;
 
         @media #{$responsive-medium} {
@@ -180,17 +180,18 @@ Use it to make something cool, have fun, and share what you've learned with othe
         }
     }
 
-        .page-content__widget {
-            & + .page-content__widget {
-                margin-top: 1em;
-            }
+    &__widget {
+        & + .page-content__widget {
+            margin-top: 1em;
         }
+    }
+}
+
 
 .article-header {
     position: relative;
-}
 
-    .article-header__title {
+    &__title {
         background: $tm-red;
         color: #FFF;
         margin: 0;
@@ -203,20 +204,22 @@ Use it to make something cool, have fun, and share what you've learned with othe
         }
     }
 
-        .article-header--featured-image {
-            .article-header__title {
-                @media #{$responsive-medium-large} {
-                    bottom: 0;
-                    position: absolute;
-                }
+    &--featured-image {
+        .article-header__title {
+            @media #{$responsive-medium-large} {
+                bottom: 0;
+                position: absolute;
             }
         }
+    }
 
-    .article-header__image {
+    &__image {
         display: block;
         height: auto;
         width: 100%;
     }
+}
+
 
 .article-text {
     max-width: 45em;
@@ -239,54 +242,55 @@ Use it to make something cool, have fun, and share what you've learned with othe
         background: $tm-grey;
         padding: 1em;
     }
-}
 
-    .sidebar-widget__title {
+    &__title {
         margin-top: 0;
     }
+}
 
 .fact-widget {
     padding: 1em;
-}
 
-    .fact-widget--blue {
+    &--blue {
         background: $tm-blue;
         color: #FFF;
     }
 
-    .fact-widget--yellow {
+    &--yellow {
         background: $tm-yellow;
     }
 
-    .fact-widget--grey {
+    &--grey {
         background: $tm-grey;
     }
 
-    .fact-widget--red {
+    &--red {
         background: $tm-red;
         color: #FFF;
     }
 
-    .fact-widget--burgundy {
+    &--burgundy {
         background: $tm-crimson;
         color: #FFF;
     }
 
-    .fact-widget__fact {
+    &__fact {
     }
 
-        .fact-widget__fact-major {
+    &__fact-major {
         font-weight: bold;
-            font: {
-                size: 2.2rem;
-            }
+        font: {
+            size: 2.2rem;
         }
+    }
 
-        .fact-widget__fact-minor {
-            font: {
-                size: 1.6rem;
-            }
+    &__fact-minor {
+        font: {
+            size: 1.6rem;
         }
+    }
+}
+
 
 .page-footer-container {
     background: lighten($tm-blue, 20%);
@@ -294,9 +298,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .page-footer {
     background: $tm-blue;
-}
 
-    .page-footer__copyright {
+    &__copyright {
         color: #FFF;
         font-size: .8rem;
         line-height: 140%;
@@ -314,15 +317,16 @@ Use it to make something cool, have fun, and share what you've learned with othe
         }
     }
 
-    .page-footer__social-links {
+    &__social-links {
         padding: 1em 1.1rem;
     }
+}
+
 
 .social-links {
     background: $tm-grey;
-}
 
-    .social-links__link {
+    &__link {
         display: inline-block;
         font-size: 2rem;
         color: #FFF;
@@ -332,13 +336,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
         }
     }
 
-    .social-links__text {
+    &__text {
         clip: rect(1px, 1px, 1px, 1px);
         height: 1px;
         overflow: hidden;
         position: absolute !important;
         width: 1px;
     }
+}
+
 
 .page-navigation-container {
     background: lighten($tm-red, 20%);
@@ -354,9 +360,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
     @media #{$responsive-small-medium} {
         height: 100vh;
     }
-}
 
-    .page-navigation__link {
+    &__link {
         border-bottom: 3px solid transparent;
         color: #FFF;
         font-size: 1.1rem;
@@ -386,33 +391,35 @@ Use it to make something cool, have fun, and share what you've learned with othe
         }
     }
 
-        .page-navigation__link--icon {
-            @media #{$responsive-small-medium} {
-                .fa {
-                    font-size: 1.4rem;
-                    vertical-align: bottom;
-                }
-            }
-
-            @media #{$responsive-large} {
+    &__link--icon {
+        @media #{$responsive-small-medium} {
+            .fa {
                 font-size: 1.4rem;
-                padding: .2em .6em;
+                vertical-align: bottom;
             }
         }
 
-        .page-navigation__link--icon .page-navigation__link-text {
-            @media #{$responsive-small-medium} {
-                margin-left: .4em;
-            }
-
-            @media #{$responsive-large} {
-                clip: rect(1px, 1px, 1px, 1px);
-                height: 1px;
-                overflow: hidden;
-                position: absolute !important;
-                width: 1px;
-            }
+        @media #{$responsive-large} {
+            font-size: 1.4rem;
+            padding: .2em .6em;
         }
+    }
+
+    &__link--icon &__link-text {
+        @media #{$responsive-small-medium} {
+            margin-left: .4em;
+        }
+
+        @media #{$responsive-large} {
+            clip: rect(1px, 1px, 1px, 1px);
+            height: 1px;
+            overflow: hidden;
+            position: absolute !important;
+            width: 1px;
+        }
+    }
+}
+
 
 .page-navigation-link-container {
     background: lighten($tm-red, 20%);
@@ -428,12 +435,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .page-navigation-link {
     background: $tm-red;
-}
 
-    .page-navigation-link__link {
+    &__link {
         color: #FFF;
         font-size: 1.8rem;
         display: block;
         padding: .2em 1.1rem;
         text-decoration: none;
     }
+}
