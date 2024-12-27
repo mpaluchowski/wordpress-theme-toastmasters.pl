@@ -14,10 +14,10 @@ This theme, is licensed under the Apache License.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 @use "sass:color";
-@use "sass:meta";
 @use "css/normalize";
 
 @use "css/variables";
+@use "css/article-text" as *;
 
 /* 404 Page */
 
@@ -226,7 +226,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .article-text {
     max-width: 45em;
 
-    @include meta.load-css("css/article-text");
+    @include article-text;
 
     blockquote {
         @media #{variables.$responsive-large} {

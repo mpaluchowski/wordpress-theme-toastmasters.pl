@@ -1,49 +1,50 @@
 @use "sass:color";
 @use "variables";
 
-& {
+@mixin article-text {
     line-height: 1.5;
-}
 
-h2 {
-    color: variables.$tm-blue;
-}
-
-ul > li {
-    list-style: none;
-
-    &:before {
-        color: variables.$tm-crimson;
-        content: "\025AA";
-        font-size: 2.6rem;
-        line-height: 1.428rem;
-        margin-left: -1.4rem;
-        position: absolute;
+    h2 {
+        color: variables.$tm-blue;
     }
-}
 
-blockquote {
-    border-left: 4px solid variables.$tm-grey;
-    box-sizing: border-box;
-    margin-left: 0;
-    padding-left: 1.1rem;
-}
+    ul > li {
+        list-style: none;
 
-a {
-    border-bottom: 1px solid color.adjust(variables.$tm-red, $lightness: 40%);
-    color: variables.$tm-red;
-    text-decoration: none;
-
-    &:hover {
-        border-bottom-color: variables.$tm-crimson;
-        color: variables.$tm-crimson;
+        &:before {
+            color: variables.$tm-crimson;
+            content: "\025AA";
+            font-size: 2.6rem;
+            line-height: 1.428rem;
+            margin-left: -1.4rem;
+            position: absolute;
+        }
     }
-}
 
-img {
-    max-width: 100%;
-}
+    blockquote {
+        border-left: 4px solid variables.$tm-grey;
+        box-sizing: border-box;
+        margin-left: 0;
+        padding-left: 1.1rem;
+    }
 
-mark {
-    background: color.adjust(variables.$tm-blue, $lightness: 60%);
+    a {
+        border-bottom: 1px solid color.adjust(variables.$tm-red, $lightness: 40%);
+        color: variables.$tm-red;
+        text-decoration: none;
+
+        &:hover {
+            border-bottom-color: variables.$tm-crimson;
+            color: variables.$tm-crimson;
+        }
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    mark {
+        background: color.adjust(variables.$tm-blue, $lightness: 60%);
+    }
+
 }
